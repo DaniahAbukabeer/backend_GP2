@@ -1,0 +1,95 @@
+﻿@{
+    ViewData["Title"] = "Pharmacies Manager";
+}
+<style>
+    a.btn {
+        margin-right:3px;
+        margin-bottom:3px;
+    } 
+</style>
+<h1>@ViewData["Title"]</h1>
+<hr />
+<div >
+    <nav class="navbar navbar-light bg-light ">
+        <div class="grid">
+            <div class="row mb-3 mx-2">
+                <div class="col-lg-8">
+                    <input style="display:inline;" class="form-control mr-sm-2 mb-2" type="search"
+                           placeholder="Search Pharmacy" aria-label="Search" />
+                </div>
+                <div class="col-lg-4">
+                    <button style="display:inline;" class="btn btn-outline-primary  my-2 my-sm-0" type="submit">
+                        search
+                    </button>
+                </div>
+            </div>
+            <div class="row mb-3 mx-3">
+                <div class="col-12 col-sm-6 ">
+                    <div class="card mb-3 px-0">
+                        @*                     <img class="card-img-top" src="~/images/pexels-anna-shvets-3683051.jpg" alt="pharmacy one"/>
+                        *@                    <div class="card-header">
+                            Pharmacy 1
+                        </div>
+                        <div class="card-body">
+                            <p> test test test test test test</p>
+                        </div>
+                        <div class="card-footer">
+                            <a class="btn btn-dark" asp-action="AddStock" asp-controller="Pharmacy">Add Stock</a>
+                            <a class="btn btn-outline-dark" href="#">Edit Pharmacy</a>
+                            <a class="btn btn-outline-danger" href="#">Remove Pharmacy</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 ">
+                    <div class="card mb-3 px-0">
+                        @*                     <img class="card-img-top" src="~/images/pexels-anna-shvets-3683051.jpg" alt="pharmacy one"/>
+                        *@                    <div class="card-header">
+                            Pharmacy 2
+                        </div>
+                        <div class="card-body">
+                            <p> test test test test test test</p>
+                        </div>
+                        <div class="card-footer">
+                            <a class="btn btn-dark" asp-action="AddStock" asp-controller="Pharmacy">Add Stock</a>
+                            <a class="btn btn-outline-dark" href="#">Edit Pharmacy</a>
+                            <a class="btn btn-outline-danger" href="#">Remove Pharmacy</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6  ">
+                    <div class="card mb-3 px-0">
+                        @*                     <img class="card-img-top" src="~/images/pexels-anna-shvets-3683051.jpg" alt="pharmacy one"/>
+                        *@                    <div class="card-header">
+                            Pharmacy 3
+                        </div>
+                        <div class="card-body">
+                            <p> test test test test test test</p>
+                        </div>
+                        <div class="card-footer">
+                            <a class="btn btn-dark" asp-action="AddStock" asp-controller="Pharmacy">Add Stock</a>
+                            <a class="btn btn-outline-dark" href="#">Edit Pharmacy</a>
+                            <a class="btn btn-outline-danger" href="#">Remove Pharmacy</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 ">
+                    <div class="card mb-3 px-0">
+                        @*                     <img class="card-img-top" src="~/images/pexels-anna-shvets-3683051.jpg" alt="pharmacy one"/>
+                        *@                    <div class="card-header">
+                            Pharmacy 4
+                        </div>
+                        <div class="card-body">
+                            <p> test test test test test test</p>
+                        </div>
+                        <div class="card-footer">
+                            <a class="btn btn-dark" asp-action="AddStock" asp-controller="Pharmacy">Add Stock</a>
+                            <a class="btn btn-outline-dark" href="#">Edit Pharmacy</a>
+                            <a class="btn btn-outline-danger" href="#">Remove Pharmacy</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+</div>
