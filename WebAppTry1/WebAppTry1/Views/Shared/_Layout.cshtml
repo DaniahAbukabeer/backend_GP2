@@ -1,4 +1,44 @@
-﻿<!DOCTYPE html>
+﻿<style>
+    .full-geight-nav{
+        height:100%;
+    }
+
+    .page-container{
+        display:flex;
+        height: 100vh;
+    }
+
+    .side-nav{
+        flex: 0 0 auto; /* Prevent it from growing */
+        width: 250px; /* Adjust the width as needed */
+        background-color: #333; /* Add your desired background color */
+        color: #fff; /* Add text color as needed */
+        display: flex;
+        flex-direction: column;
+       
+    }
+
+    .side-nav-content {
+        display:flex;
+        flex-direction :column;
+        align-items: center;
+        padding-top: 10px;
+        font-size: large;
+    }
+
+    /* Remove margin and padding from the body and side-nav */
+    body, .side-nav {
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Style the content area as needed */
+    .content {
+        flex: 1; /* Expand to fill remaining space vertically */
+        padding: 20px; /* Add any desired padding for content */
+    }
+</style>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -8,49 +48,53 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/WebAppTry1.styles.css" asp-append-version="true" />
 </head>
+
+
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark border-bottom box-shadow ">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
-                    <img src="~/images/GP draft1.svg" width="30" height="30" alt="Dawer Daway logo" />
+                    <img src="~/images/GP draft1.svg" width="50" height="50" alt="Dawer Daway logo" />
                     DawerDaway ProtoType</a>
             </div>
         </nav>
     </header>
-    <div class="container">
-        <div class="row">
-            <nav class="col-md-3">
+    <div class="container mx-0 px-0 mt-0 pt-0 page-container">
+        <div class="row mx-0 px-0">
+            <nav class="side-nav navbar col-md-3 navbar-expand-sm navbar-toggleable-sm bg-opacity-75 bg-dark navbar-dark
+                        ">
                 <button class="navbar-toggler" type="button" 
                 data-toggle="collapse" data-target="#sidebar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="sidebar">
+                <div class="collapse navbar-collapse side-nav-content" id="sidebar">
                     <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link">
+                        <a style="text-decoration:none; color:white;" href="#">
                             dont get lost!!
-                                <hr />
+                                <hr style="padding-left:0; padding-right:0; margin-left: 0; margin-right:0;"/>
                         </a>
                     </li>
                         
                     <li class="nav-item">
-                        <a class="nav-link" asp-action="index" asp-controller="home">
+                            <a style="text-decoration:none; color:white;" asp-action="index" asp-controller="home">
                             Home
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" asp-action="privacy" asp-controller="home">privacy</a>
+                            <a style="text-decoration:none; color:white;" asp-action="privacy" asp-controller="home">privacy</a>
                     </li>
                     </ul>
                 </div>
             </nav>
-        </div>
+       
         
-        <div class="col-md-9">
+        <div class="col-md-9 content align-content-center ">
             <main role="main" class="pb-3">
                 @RenderBody()
             </main>
+        </div>
         </div>
     </div>
 
@@ -64,4 +108,60 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
+
+@* <body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="~/images/GP draft1.svg" width="30" height="30" alt="Dawer Daway logo" />
+                    DawerDaway ProtoType
+                </a>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="row">
+            <nav class="col-md-3">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidebar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="sidebar">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link">
+                                don't get lost!!
+                                <hr />
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-action="index" asp-controller="home">
+                                Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-action="privacy" asp-controller="home">Privacy</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="col-md-9">
+                <main role="main" class="pb-3">
+                    @RenderBody()
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2023 - DawerDaway ProtoType - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+ *@
 </html>
