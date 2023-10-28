@@ -1,0 +1,73 @@
+﻿@{
+    ViewData["Title"] = "Edit stock";
+}
+<h1>@ViewData["Title"]</h1>
+<hr />
+<h4>current pharmacy name</h4>
+<div class="row my-3 mx-2">
+    <div class="col-lg-8">
+        <input style="display:inline;" class="form-control mr-sm-2 mb-2" type="search"
+               placeholder="Search Product" aria-label="Search" />
+    </div>
+    <div class="col-lg-4">
+        <button style="display:inline;" class="btn btn-outline-primary  my-2 my-sm-0" type="submit">
+            search
+        </button>
+    </div>
+</div>
+
+<div class="container">
+    <section class="table-responsive">
+            <!--Table-->
+            <table class="table table-hover table-fixed">
+                <!--Table head-->
+                <thead>
+                    <tr>
+                        <th>Code</th>
+                        <th>product Name</th>
+                        <th>dosage</th>
+                        <th>price</th>
+                        <th>Quantity</th>
+                        <th>Expire Date</th>
+                        <th>Discount</th>
+                        <th>Tax</th>
+                        <th>Total Price</th>
+                        <th>Edit</th>
+                    </tr>
+                </thead>
+                <!--Table head-->
+                <!--Table body-->
+                <tbody>
+                    <tr>
+                        <th class="col-1" scope="row"><input class="form-control" disabled type="number" /></th>
+                    <td class="col-1"><input class="form-control" disabled type="text" /></td>
+                    <td class="col-1"><input class="form-control" disabled type="number" min="0" /><label>mg</label> </td>
+                    <td class="col-1"><input class="form-control" disabled type="number" min="0" /></td>
+                    <td class="col-1"><input class="form-control" disabled type="number" min="1" /></td>
+                    <td class="col-1"><input class="form-control" disabled type="date" /></td>
+                    <td class="col-1"><input class="form-control" disabled type="number" min="0" /></td>
+                    <td class="col-1"><input class="form-control" disabled type="number" min="0" /></td>
+                    <td class="col-1"><input class="form-control" disabled type="number" min="0" /></td>
+                    <td class="col-1"><a class="btn btn-dark form-control" asp-action="Selling" asp-controller="Pharmacy">Edit</a></td>
+
+                    </tr>
+                    <tr>
+                    <th class="col-1" scope="row"><input class="form-control" disabled type="number" /></th>
+                    <td class="col-1"><input class="form-control" disabled type="text" /></td>
+                    <td class="col-1"><input class="form-control" disabled type="number" min="0" /> <label>mg</label></td>
+                    <td class="col-1"><input class="form-control" disabled type="number" min="0" /></td>
+                    <td class="col-1"><input class="form-control" disabled type="number" min="1" /></td>
+                    <td class="col-1"><input class="form-control" disabled type="date" /></td>
+                    <td class="col-1"><input class="form-control" disabled type="number" min="0" /></td>
+                    <td class="col-1"><input class="form-control" disabled type="number" min="0" /></td>
+                    <td class="col-1"><input class="form-control" disabled type="number" min="0" /></td>
+                    <td class="col-1"><a class="btn btn-dark form-control" asp-action="Selling" asp-controller="Pharmacy">Edit</a></td>
+                    </tr>
+                    
+                </tbody>
+                <!--Table body-->
+            </table>
+            <!--Table-->
+        
+    </section>
+</div>

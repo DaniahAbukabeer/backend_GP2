@@ -14,5 +14,15 @@ namespace WebAppTry1.Controllers
         {
             return View();
         }
+
+        [HttpGet]
+        public IActionResult EditStock()
+        {
+            return View();
+        }
+
+        public IActionResult Selling() { 
+            return View();
+        }
     }
 }
