@@ -2,78 +2,188 @@
     ViewData["Title"] = "Add New Stock";
 }
 <style>
-    td{
-        width:min-content;
+    td:first-child {
+        width:30px;
     }
+
+    td input{
+        /* width:25px; */
+    }
+
     input{
-        width:min-content;
+        width:50px;
     }
+   
 </style>
 
 <h1>@ViewData["Title"]</h1>
 <hr />
-<form method="post" enctype="multipart/form-data">
-    <table class="table">
-        <thead class="toast-header">
-            <tr>
-                <th scope="col">Code</th>
-                <th scope="col">Product Name</th>
-                <th scope="col">Phar. Price</th>
-                <th scope="col">Public Price</th>
-                <th scope="col">Quantity</th>
-                <th scope="col">Expire Date</th>
-                <th scope="col">Discount</th>
-                <th scope="col">Tax</th>
-                <th scope="col">Total Price</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><input type="number" /></td>
-                <td><input type="text" /></td>
-                <td><input type="number" /></td>
-                <td><input type="number" /></td>
-                <td><input type="number" /></td>
-                <td><input type="date" /></td>
-                <td><input type="number" /></td>
-                <td><input type="number" /></td>
-                <td><input type="number" /></td>
-            </tr>
-            <tr>
-                <td><input type="number" /></td>
-                <td><input type="text" /></td>
-                <td><input type="number" /></td>
-                <td><input type="number" /></td>
-                <td><input type="number" /></td>
-                <td><input type="date" /></td>
-                <td><input type="number" /></td>
-                <td><input type="number" /></td>
-                <td><input type="number" /></td>
-            </tr>
-            <tr>
-                <td><input type="number" /></td>
-                <td><input type="text" /></td>
-                <td><input type="number" /></td>
-                <td><input type="number" /></td>
-                <td><input type="number" /></td>
-                <td><input type="date" /></td>
-                <td><input type="number" /></td>
-                <td><input type="number" /></td>
-                <td><input type="number" /></td>
-            </tr>
-            <tr>
-                <td><input type="number" /></td>
-                <td><input type="text" /></td>
-                <td><input type="number" /></td>
-                <td><input type="number" /></td>
-                <td><input type="number" /></td>
-                <td><input type="date" /></td>
-                <td><input type="number" /></td>
-                <td><input type="number" /></td>
-                <td><input type="number" /></td>
-            </tr>
-        </tbody>
+<section class="table-responsive">
+    <form method="post">
+        <!--Table-->
+        <table class="table table-hover table-fixed">
+            <!--Table head-->
+            <thead>
+                <tr>
+                    <th>Code</th>
+                    <th>product Name</th>
+                    <th>Phar. Price</th>
+                    <th>Public price</th>
+                    <th>Quantity</th>
+                    <th>Expire Date</th>
+                    <th>Discount</th>
+                    <th>Tax</th>
+                    <th>Total Price</th>
+                </tr>
+            </thead>
+            <!--Table head-->
+            <!--Table body-->
+            <tbody>
+                <tr>
+                    <th class="col-1" scope="row"><input class="form-control" type="number" /></th>
+                    <td class="col-1"><input class="form-control" type="text" /></td>
+                    <td class="col-1"><input class="form-control" type="number" min="0" /></td>
+                    <td class="col-1"><input class="form-control" type="number" min="0" /></td>
+                    <td class="col-1"><input class="form-control" type="number" min="1" /></td>
+                    <td class="col-1"><input class="form-control" type="date" /></td>
+                    <td class="col-1"><input class="form-control" type="number" min="0" /></td>
+                    <td class="col-1"><input class="form-control" type="number" min="0" /></td>
+                    <td class="col-1"><input class="form-control" type="number" min="0" /></td>
 
-    </table>
+                </tr>
+                <tr>
+                    <th class="col-1" scope="row"><input class="form-control" type="number" /></th>
+                    <td class="col-1"><input class="form-control" type="text" /></td>
+                    <td class="col-1"><input class="form-control" type="number" min="0" /></td>
+                    <td class="col-1"><input class="form-control" type="number" min="0" /></td>
+                    <td class="col-1"><input class="form-control" type="number" min="1" /></td>
+                    <td class="col-1"><input class="form-control" type="date" /></td>
+                    <td class="col-1"><input class="form-control" type="number" min="0" /></td>
+                    <td class="col-1"><input class="form-control" type="number" min="0" /></td>
+                    <td class="col-1"><input class="form-control" type="number" min="0" /></td>
+
+                </tr>
+                <tr>
+                    <th class="col-1" scope="row"><input class="form-control" type="number" /></th>
+                    <td class="col-1"><input class="form-control" type="text" /></td>
+                    <td class="col-1"><input class="form-control" type="number" min="0" /></td>
+                    <td class="col-1"><input class="form-control" type="number" min="0" /></td>
+                    <td class="col-1"><input class="form-control" type="number" min="1" /></td>
+                    <td class="col-1"><input class="form-control" type="date" /></td>
+                    <td class="col-1"><input class="form-control" type="number" min="0" /></td>
+                    <td class="col-1"><input class="form-control" type="number" min="0" /></td>
+                    <td class="col-1"><input class="form-control" type="number" min="0" /></td>
+
+                </tr>
+                <tr>
+                    <th class="col-1" scope="row"><input class="form-control" type="number" /></th>
+                    <td class="col-1"><input class="form-control" type="text" /></td>
+                    <td class="col-1"><input class="form-control" type="number" min="0" /></td>
+                    <td class="col-1"><input class="form-control" type="number" min="0" /></td>
+                    <td class="col-1"><input class="form-control" type="number" min="1" /></td>
+                    <td class="col-1"><input class="form-control" type="date" /></td>
+                    <td class="col-1"><input class="form-control" type="number" min="0" /></td>
+                    <td class="col-1"><input class="form-control" type="number" min="0" /></td>
+                    <td class="col-1"><input class="form-control" type="number" min="0" /></td>
+
+                </tr>
+                <tr>
+                    <th class="col-1" scope="row"><input class="form-control" type="number" /></th>
+                    <td class="col-1"><input class="form-control" type="text" /></td>
+                    <td class="col-1"><input class="form-control" type="number" min="0" /></td>
+                    <td class="col-1"><input class="form-control" type="number" min="0" /></td>
+                    <td class="col-1"><input class="form-control" type="number" min="1" /></td>
+                    <td class="col-1"><input class="form-control" type="date" /></td>
+                    <td class="col-1"><input class="form-control" type="number" min="0" /></td>
+                    <td class="col-1"><input class="form-control" type="number" min="0" /></td>
+                    <td class="col-1"><input class="form-control" type="number" min="0" /></td>
+
+                </tr>
+                <tr>
+                    <th class="col-1" scope="row"><input class="form-control" type="number" /></th>
+                    <td class="col-1"><input class="form-control" type="text" /></td>
+                    <td class="col-1"><input class="form-control" type="number" min="0" /></td>
+                    <td class="col-1"><input class="form-control" type="number" min="0" /></td>
+                    <td class="col-1"><input class="form-control" type="number" min="1" /></td>
+                    <td class="col-1"><input class="form-control" type="date" /></td>
+                    <td class="col-1"><input class="form-control" type="number" min="0" /></td>
+                    <td class="col-1"><input class="form-control" type="number" min="0" /></td>
+                    <td class="col-1"><input class="form-control" type="number" min="0" /></td>
+
+                </tr>
+            </tbody>
+            <!--Table body-->
+        </table>
+        <!--Table-->
+        <button type="submit" class="btn btn-dark">Add Stock</button>
+        <button type="reset" class="btn btn-outline-dark">Reset table</button>
+        <a class="btn btn-outline-warning" href="#">Cancel</a>
+    </form>
+</section>
+@* <form method="post" enctype="multipart/form-data">
+    <div class="container table-responsive">
+        <table class="table">
+            <thead class="toast-header">
+                <tr>
+                    <th scope="col">Code</th>
+                    <th scope="col">Product Name</th>
+                    <th scope="col">Phar. Price</th>
+                    <th scope="col">Public Price</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Expire Date</th>
+                    <th scope="col">Discount</th>
+                    <th scope="col">Tax</th>
+                    <th scope="col">Total Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row"><input min="0" type="number" /></th>
+                    <td><input type="text" /></td>
+                    <td><input type="number" /></td>
+                    <td><input type="number" /></td>
+                    <td><input type="number" /></td>
+                    <td><input type="date" /></td>
+                    <td><input type="number" /></td>
+                    <td><input type="number" /></td>
+                    <td><input type="number" /></td>
+                </tr>
+                <tr>
+                    <th scope="row"><input min="0" type="number" /></th>
+                    <td><input type="text" /></td>
+                    <td><input type="number" /></td>
+                    <td><input type="number" /></td>
+                    <td><input type="number" /></td>
+                    <td><input type="date" /></td>
+                    <td><input type="number" /></td>
+                    <td><input type="number" /></td>
+                    <td><input type="number" /></td>
+                </tr>
+                <tr>
+                    <th scope="row"><input min="0" type="number" /></th>
+                    <td><input type="text" /></td>
+                    <td><input type="number" /></td>
+                    <td><input type="number" /></td>
+                    <td><input type="number" /></td>
+                    <td><input type="date" /></td>
+                    <td><input type="number" /></td>
+                    <td><input type="number" /></td>
+                    <td><input type="number" /></td>
+                </tr>
+                <tr>
+                    <th scope="row"><input min="0" type="number" /></th>
+                    <td><input type="text" /></td>
+                    <td><input type="number" /></td>
+                    <td><input type="number" /></td>
+                    <td><input type="number" /></td>
+                    <td><input type="date" /></td>
+                    <td><input type="number" /></td>
+                    <td><input type="number" /></td>
+                    <td><input type="number" /></td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
 </form>
-
+ *@
