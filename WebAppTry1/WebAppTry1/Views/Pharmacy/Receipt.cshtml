@@ -1,0 +1,60 @@
+﻿@{
+    ViewData["Title"] = "Receipt";
+}
+
+<div class="container-fluid d-grid">
+    <row class="row-cols-1">
+        <div class="bg-black navbar-expand navbar-dark">
+            <div class="ms-auto">
+                <input type="search" class="form-control" placeholder="Search for product by name?" />
+                <button class="btn btn-check">Search</button>
+            </div>
+            <div class="me-auto">
+                <ul>
+                    <li>
+                        <a href="#" class="nav-item">Pharmacy Name</a>
+                        </li>
+                    <li>
+                        <a href="#" class="nav-item">current Pharmacis</a>
+                    </li>
+                    </ul>
+            </div>
+        </div>
+    </row>
+    <row class="row row-cols-2">
+        <div class="card  align-content-center col-6">
+            <img src="~/images/pexels-karolina-grabowska-4021811.jpg" class="align-self-center card-img"/>
+            <div class="card-body">
+                <p class="card-text ">
+                    @*text-light bg-dark*@
+                    <h4>Products' Name</h4>
+                    info info info info info
+                    test test test test test
+                </p>
+            </div>
+        </div>
+        <form method="post" class="form form-control col-6">
+            <h3>Order #3726812</h3>
+            <table class="table table-borderless table-hover table-dark bg-dark">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Qty</th>
+                        <th>Price</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row"><input class="form-control" disabled type="number" /></th>
+                        <td><input class="form-control" disabled/></td>
+                        <td ><input class="form-control" disabled /></td>
+                        <td ><input class="form-control" disabled  /></td>
+                        <td ><input class="form-control" disabled  /></td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </row>
+</div>

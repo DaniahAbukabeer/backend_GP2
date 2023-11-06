@@ -24,5 +24,10 @@ namespace WebAppTry1.Controllers
         public IActionResult Selling() { 
             return View();
         }
+        [HttpGet]
+        public IActionResult Receipt()
+        {
+            return View();
+        }
     }
 }
