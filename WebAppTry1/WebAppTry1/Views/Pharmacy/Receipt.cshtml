@@ -1,60 +1,159 @@
 ﻿@{
     ViewData["Title"] = "Receipt";
 }
-
-<div class="container-fluid d-grid">
-    <row class="row-cols-1">
-        <div class="bg-black navbar-expand navbar-dark">
-            <div class="ms-auto">
-                <input type="search" class="form-control" placeholder="Search for product by name?" />
-                <button class="btn btn-check">Search</button>
-            </div>
-            <div class="me-auto">
-                <ul>
-                    <li>
-                        <a href="#" class="nav-item">Pharmacy Name</a>
-                        </li>
-                    <li>
+<style>
+    a{
+        text-decoration : none;
+        color: white;
+        display: inline-flex;
+    }
+    input.S {
+        display : inline-flex;
+    }
+    div.row div.col-3 button{
+        margin-bottom : 5%;
+    }
+</style>
+<div class="d-grid mx-0 px-0">
+    <row class="mx-0 ">
+        <div class="bg-black navbar-dark mx-0">
+            <div class=" col-8 mx-2 ">
+               
+                   
+                        <a href="#" class="nav-item mx-2">Pharmacy Name</a>
+                    
+                    
                         <a href="#" class="nav-item">current Pharmacis</a>
-                    </li>
-                    </ul>
+                        
+                        @* <span class="me-auto">  *@<button class=" btn btn-light bg-light my-2">Search</button> @* </span> *@
+                                                     <span><input type="search" class="form-control" placeholder="type name" /></span>
             </div>
+
+            <div >      
+@*                 <div >
+                    <input type="search" class="form-control col-4" placeholder="Search for product by name?" />
+
+                </div> *@
+                <div>
+                    @* <button class="btn btn-check btn-light">Search</button> *@
+                </div>
+            </div>
+            
         </div>
     </row>
-    <row class="row row-cols-2">
-        <div class="card  align-content-center col-6">
-            <img src="~/images/pexels-karolina-grabowska-4021811.jpg" class="align-self-center card-img"/>
-            <div class="card-body">
-                <p class="card-text ">
-                    @*text-light bg-dark*@
-                    <h4>Products' Name</h4>
-                    info info info info info
-                    test test test test test
-                </p>
-            </div>
+    <row class="row justify-content-center">
+        <div class=" col col-8 ">
+            <form method="post" class="form form-control">
+                <h3>Order #3726812</h3>
+                <table class="table table-borderless table-hover table-dark bg-dark roun">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Qty</th>
+                            <th>Price</th> 
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row"><input class="form-control"  type="number" /></th>
+                            <td><input class="form-control" disabled /></td>
+                            <td><input class="form-control" disabled /></td>
+                            <td><input class="form-control" disabled /></td>
+                            <td><input class="form-control" disabled /></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="row">
+                    <button class="btn btn-dark d-inline col-4 mx-2" type="submit">Checkout</button>
+                    <button class="btn btn-outline-dark d-inline col-4 mx-2" type="reset">Cancel</button>
+                </div>
+            </form>
         </div>
-        <form method="post" class="form form-control col-6">
-            <h3>Order #3726812</h3>
-            <table class="table table-borderless table-hover table-dark bg-dark">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Name</th>
-                        <th>Qty</th>
-                        <th>Price</th>
-                        <th>Total</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row"><input class="form-control" disabled type="number" /></th>
-                        <td><input class="form-control" disabled/></td>
-                        <td ><input class="form-control" disabled /></td>
-                        <td ><input class="form-control" disabled  /></td>
-                        <td ><input class="form-control" disabled  /></td>
-                    </tr>
-                </tbody>
-            </table>
-        </form>
+        @* <div class="card col align-content-center col-6 "> *@
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-body">
+                        <input type="text" class="form-control mb-3" id="display" readonly>
+                        <div class="row">
+                            <div class="col-3">
+                                <button class="btn btn-dark btn-block" onclick="appendToDisplay('1')">1</button>
+                            </div>
+                            <div class="col-3">
+                                <button class="btn btn-dark btn-block" onclick="appendToDisplay('2')">2</button>
+                            </div>
+                            <div class="col-3">
+                                <button class="btn btn-dark btn-block" onclick="appendToDisplay('3')">3</button>
+                            </div>
+                            <div class="col-3">
+                                <button class="btn  btn-secondary btn-block" onclick="appendToDisplay('+')">+</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3">
+                                <button class="btn btn-dark btn-block" onclick="appendToDisplay('4')">4</button>
+                            </div>
+                            <div class="col-3">
+                                <button class="btn btn-dark btn-block" onclick="appendToDisplay('5')">5</button>
+                            </div>
+                            <div class="col-3">
+                                <button class="btn btn-dark btn-block" onclick="appendToDisplay('6')">6</button>
+                            </div>
+                            <div class="col-3">
+                                <button class="btn btn-secondary btn-block" onclick="appendToDisplay('-')">-</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3">
+                                <button class="btn  btn-dark btn-block" onclick="appendToDisplay('7')">7</button>
+                            </div>
+                            <div class="col-3">
+                                <button class="btn btn-dark btn-block" onclick="appendToDisplay('8')">8</button>
+                            </div>
+                            <div class="col-3">
+                                <button class="btn btn-dark btn-block" onclick="appendToDisplay('9')">9</button>
+                            </div>
+                            <div class="col-3">
+                                <button class="btn btn-secondary btn-block" onclick="appendToDisplay('*')">*</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3">
+                                <button class="btn btn-danger btn-block" onclick="clearDisplay()">C</button>
+                            </div>
+                            <div class="col-3">
+                                <button class="btn btn-dark btn-block" onclick="appendToDisplay('0')">0</button>
+                            </div>
+                            <div class="col-3">
+                                <button class="btn btn-secondary btn-block" onclick="appendToDisplay('/')">/</button>
+                            </div>
+                            <div class="col-3">
+                                <button class="btn btn-primary btn-block" onclick="calculate()">=</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       @*  </div> *@
     </row>
 </div>
+
+<script>
+    function appendToDisplay(value) {
+        document.getElementById('display').value += value;
+    }
+
+    function clearDisplay() {
+        document.getElementById('display').value = '';
+    }
+
+    function calculate() {
+        try {
+            const result = eval(document.getElementById('display').value);
+            document.getElementById('display').value = result;
+        } catch (error) {
+            document.getElementById('display').value = 'Error';
+        }
+    }
+</script>
