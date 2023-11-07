@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using WebAppTry1.Models;
+
 namespace WebAppTry1
 {
     public class Program
@@ -8,6 +11,11 @@ namespace WebAppTry1
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            //builder.Services.AddSqlServer()
+            builder.Services.AddDbContextPool<ApplicationDbContext>(
+                options => options.UseSqlServer(
+                        builder.Configuration.GetConnectionString("DwaerDawayDBConnection")
+                    ));
 
             var app = builder.Build();
 

@@ -4,11 +4,16 @@ namespace WebAppTry1.Models
 {
     public class ProdoctModel
     {
+        [Key]
         public int Id { get; set; } // code == number
         [MaxLength(60)]//the longes medication known is of 45 char's but give a margin for the future :)
-        public string PName { get; set; }//public name
+        public string TName { get; set; }//Trade name
         [MaxLength(60)]
         public string SName { get; set; } //scientific name
+
+        [MaxLength(50)]
+        public string number { get; set; }
+
         [MaxLength(50)]
         public string Provider { get; set; } //who makes the product "company"
         [MaxLength(50)]
@@ -16,9 +21,12 @@ namespace WebAppTry1.Models
         [MaxLength(30)]
         public string Country { get; set; }//where was it made
         public double PublicPrice  { get; set; }//price ppl buy at
+        public double PulbicPriceWTax { get; set; }// price with tax
         [MaxLength(13)]
         [MinLength(13)]
         public int BarCode { get; set; }
+
+        public int Quantity { get; set; }
 
         [MaxLength(7)]
         [MinLength(7)]
@@ -32,7 +40,10 @@ namespace WebAppTry1.Models
         [MaxLength(150)]
         public string Discreption { get; set; }
         
-        public double Discaount { get; set; }
+        public double Discount { get; set; }
+
+        public List<PharmacyModel> Pharmacy { get; set;}//every product can be in one or more pharmacies!
+
 
     }
 }
