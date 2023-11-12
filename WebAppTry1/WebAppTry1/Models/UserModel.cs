@@ -7,15 +7,15 @@ namespace WebAppTry1.Models
     {
         [Key]
         public int Id { get; set; }
-        [Required]
+        [Required(ErrorMessage ="user name is required")]
         [MaxLength(30)]
         public string UserName { get; set; }
 
-        [Required]
+        [Required(ErrorMessage ="Password is required")]
         [MaxLength(30)]
         [PasswordPropertyText]
         public string Password { get; set; }
-        [Required]
+        [Required(ErrorMessage ="Phone number is required")]
         [MaxLength(13)]
         [MinLength(13)]
         public string PhoneNumber { get; set; }

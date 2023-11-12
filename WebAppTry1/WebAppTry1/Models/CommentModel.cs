@@ -17,7 +17,11 @@ namespace WebAppTry1.Models
         [MaxLength(5)]//so someone can leave a ratting but cant leave a comment without ratting!
         public float Ratting { get; set; }//this is the indivisual ratting for every comment,
 
-        public DbSet<PharmacyModel> Pharmacy { get; set;}//every comment is connected to one pharmacy only!
+        public int UserId { get; set; }
+        public int PharmacyId { get; set; }
+
+        public UserModel Users { get; set; }
+        public PharmacyModel Pharmacy { get; set;}//every comment is connected to one pharmacy only!
         
     }
 }

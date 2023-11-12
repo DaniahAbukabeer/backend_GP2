@@ -16,6 +16,7 @@ namespace WebAppTry1
                 options => options.UseSqlServer(
                         builder.Configuration.GetConnectionString("DwaerDawayDBConnection")
                     ));
+            //builder.Services.AddSingleton<>
 
             var app = builder.Build();
 

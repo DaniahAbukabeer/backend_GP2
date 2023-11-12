@@ -2,11 +2,20 @@
 
 namespace WebAppTry1.Models
 {
-    public class ApplicationDbContext : DbContext 
+    internal class ApplicationDbContext : DbContext 
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { 
-        
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
+        {
+
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder) {
+            modelBuilder.Entity<UserProductModel>()
+                .HasKey(b => new { b.UserId, b.ProductId });
+        }
+        //protected override void onConfiguring(DbContextOptionsBuilder options) { 
+
+        //}
 
         public DbSet<UserModel> Users { get; set; }
         public DbSet<PharmacyModel> Pharmacies { get; set;}

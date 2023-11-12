@@ -42,6 +42,7 @@ namespace WebAppTry1.Models
         
         public double Discount { get; set; }
 
+        public List<UserProductModel> UserProducts { get; set; }
         public List<PharmacyModel> Pharmacy { get; set;}//every product can be in one or more pharmacies!
 
 
