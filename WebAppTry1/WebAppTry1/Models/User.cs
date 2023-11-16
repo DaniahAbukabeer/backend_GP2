@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace WebAppTry1.Models
 {
-    public class UserModel
+    public class User
     {
         [Key]
         public int Id { get; set; }
@@ -22,6 +22,11 @@ namespace WebAppTry1.Models
 
         public  double Latitude { get; set; }
         public double Longitude { get; set; }
+
+        public List<Comment> Comments { get; set; }
+
+
+        public List<UserProduct> UserProducts { get; } = new();
 
         //public enum UserRole {get; set; }
 

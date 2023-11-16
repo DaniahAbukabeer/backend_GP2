@@ -3,10 +3,10 @@ using System.ComponentModel.DataAnnotations;
 
 namespace WebAppTry1.Models
 {
-    public class CommentModel
+    public class Comment
     {
-        [Key]
-        public int Id { get; set; }
+        
+        
 
         public bool Statues { get; set; }//true => active, fauls => removed
         public string Text { get; set; }// the content of the comment
@@ -20,8 +20,8 @@ namespace WebAppTry1.Models
         public int UserId { get; set; }
         public int PharmacyId { get; set; }
 
-        public UserModel Users { get; set; }
-        public PharmacyModel Pharmacy { get; set;}//every comment is connected to one pharmacy only!
+        public User Users { get; set; }
+        public Pharmacy Pharmacy { get; set;}//every comment is connected to one pharmacy only!
         
     }
 }

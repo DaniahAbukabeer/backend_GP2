@@ -1,9 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 //using System.Device.Location.GeoCoordinate;
 namespace WebAppTry1.Models
 {
-    public class PharmacyModel
+    public class Pharmacy
     {
         [Key]
         public int Id { get; set; }
@@ -23,14 +24,15 @@ namespace WebAppTry1.Models
         public double Longitude { get; set; }
         [MaxLength(150)]
         public string Description { get; set; }
-        [Required]
+        //[Required(ErrorMessage ="")]
         [MaxLength(5)]
+        [DefaultValue(0.0)]
         public float Ratting { get; set; }//this is the average ratting of each pharamcy! (sum of all comments/number)
 
         //public int NumofComments { get; set; }//auto increment this every time someone leaves a co
 
-        public List<CommentModel> Comment { get; set; }//every pharmacy have a list of comments
-        public List<ProdoctModel> Prodoct { get; set; }//a pharamcy can have one or more products
+        public List<Comment> Comment { get; set; }//every pharmacy have a list of comments
+        public List<Product> Product { get; set; }//a pharamcy can have one or more products
 
     }
 }

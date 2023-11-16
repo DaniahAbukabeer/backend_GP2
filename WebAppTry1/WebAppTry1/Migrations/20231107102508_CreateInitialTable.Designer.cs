@@ -40,19 +40,19 @@ namespace WebAppTry1.Migrations
                     b.ToTable("CommentModelPharmacyModel");
                 });
 
-            modelBuilder.Entity("PharmacyModelProdoctModel", b =>
+            modelBuilder.Entity("PharmacyModelProductModel", b =>
                 {
                     b.Property<int>("PharmacyId")
                         .HasColumnType("int");
 
-                    b.Property<int>("ProdoctId")
+                    b.Property<int>("ProductId")
                         .HasColumnType("int");
 
-                    b.HasKey("PharmacyId", "ProdoctId");
+                    b.HasKey("PharmacyId", "ProductId");
 
-                    b.HasIndex("ProdoctId");
+                    b.HasIndex("ProductId");
 
-                    b.ToTable("PharmacyModelProdoctModel");
+                    b.ToTable("PharmacyModelProductModel");
                 });
 
             modelBuilder.Entity("WebAppTry1.Models.CommentModel", b =>
@@ -124,7 +124,7 @@ namespace WebAppTry1.Migrations
                     b.ToTable("Pharmacies");
                 });
 
-            modelBuilder.Entity("WebAppTry1.Models.ProdoctModel", b =>
+            modelBuilder.Entity("WebAppTry1.Models.ProductModel", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -251,7 +251,7 @@ namespace WebAppTry1.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("PharmacyModelProdoctModel", b =>
+            modelBuilder.Entity("PharmacyModelProductModel", b =>
                 {
                     b.HasOne("WebAppTry1.Models.PharmacyModel", null)
                         .WithMany()
@@ -259,9 +259,9 @@ namespace WebAppTry1.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("WebAppTry1.Models.ProdoctModel", null)
+                    b.HasOne("WebAppTry1.Models.ProductModel", null)
                         .WithMany()
-                        .HasForeignKey("ProdoctId")
+                        .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

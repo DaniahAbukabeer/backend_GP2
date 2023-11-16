@@ -10,16 +10,21 @@ namespace WebAppTry1.Models
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder) {
-            modelBuilder.Entity<UserProductModel>()
+            modelBuilder.Entity<UserProduct>()
                 .HasKey(b => new { b.UserId, b.ProductId });
+
+            modelBuilder.Entity<Comment>()
+                .HasKey(b => new { b.UserId, b.PharmacyId });
+
+          
         }
         //protected override void onConfiguring(DbContextOptionsBuilder options) { 
 
         //}
 
-        public DbSet<UserModel> Users { get; set; }
-        public DbSet<PharmacyModel> Pharmacies { get; set;}
-        public DbSet<ProdoctModel> Products { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Pharmacy> Pharmacies { get; set;}
+        public DbSet<Product> Products { get; set; }
         //public DbSet<CommentModel> Comments { get; set; }
         //puclic DbSet<>
     }

@@ -116,24 +116,24 @@ namespace WebAppTry1.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "PharmacyModelProdoctModel",
+                name: "PharmacyModelProductModel",
                 columns: table => new
                 {
                     PharmacyId = table.Column<int>(type: "int", nullable: false),
-                    ProdoctId = table.Column<int>(type: "int", nullable: false)
+                    ProductId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_PharmacyModelProdoctModel", x => new { x.PharmacyId, x.ProdoctId });
+                    table.PrimaryKey("PK_PharmacyModelProductModel", x => new { x.PharmacyId, x.ProductId });
                     table.ForeignKey(
-                        name: "FK_PharmacyModelProdoctModel_Pharmacies_PharmacyId",
+                        name: "FK_PharmacyModelProductModel_Pharmacies_PharmacyId",
                         column: x => x.PharmacyId,
                         principalTable: "Pharmacies",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_PharmacyModelProdoctModel_Products_ProdoctId",
-                        column: x => x.ProdoctId,
+                        name: "FK_PharmacyModelProductModel_Products_ProductId",
+                        column: x => x.ProductId,
                         principalTable: "Products",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -145,9 +145,9 @@ namespace WebAppTry1.Migrations
                 column: "PharmacyId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_PharmacyModelProdoctModel_ProdoctId",
-                table: "PharmacyModelProdoctModel",
-                column: "ProdoctId");
+                name: "IX_PharmacyModelProductModel_ProductId",
+                table: "PharmacyModelProductModel",
+                column: "ProductId");
         }
 
         /// <inheritdoc />
@@ -157,7 +157,7 @@ namespace WebAppTry1.Migrations
                 name: "CommentModelPharmacyModel");
 
             migrationBuilder.DropTable(
-                name: "PharmacyModelProdoctModel");
+                name: "PharmacyModelProductModel");
 
             migrationBuilder.DropTable(
                 name: "Users");
