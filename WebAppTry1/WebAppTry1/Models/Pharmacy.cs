@@ -27,11 +27,11 @@ namespace WebAppTry1.Models
         //[Required(ErrorMessage ="")]
         [MaxLength(5)]
         [DefaultValue(0.0)]
-        public float Ratting { get; set; }//this is the average ratting of each pharamcy! (sum of all comments/number)
+        public float Ratting { get; set; }//this is the average ratting of each pharamcy! (sum of all FeedBacks/number)
 
-        //public int NumofComments { get; set; }//auto increment this every time someone leaves a co
+        //public int NumofFeedBacks { get; set; }//auto increment this every time someone leaves a co
 
-        public List<Comment> Comment { get; set; }//every pharmacy have a list of comments
+        public List<FeedBack> FeedBack { get; set; }//every pharmacy have a list of FeedBacks
         public List<Product> Product { get; set; }//a pharamcy can have one or more products
 
     }

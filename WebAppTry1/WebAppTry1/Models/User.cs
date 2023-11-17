@@ -23,10 +23,10 @@ namespace WebAppTry1.Models
         public  double Latitude { get; set; }
         public double Longitude { get; set; }
 
-        public List<Comment> Comments { get; set; }
+        public List<FeedBack> FeedBacks { get; set; }
 
 
-        public List<UserProduct> UserProducts { get; } = new();
+        public List<UserProduct> UserProducts { get; } = new(); 
 
         //public enum UserRole {get; set; }
 

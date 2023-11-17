@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "L/ZxFSyIwuOVmm3oMEYWjtmUnPmdHAIQ+1VrcmW13LA=",
+  "Hash": "bZja9zDoOKVpxLo7tVrI4ODYSEIdjLu+jiBsFRqwBnU=",
   "Source": "WebAppTry1",
   "BasePath": "_content/WebAppTry1",
   "Mode": "Default",
@@ -1256,6 +1256,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\dany\\source\\repos\\backend_GP2\\WebAppTry1\\WebAppTry1\\wwwroot\\MOCK_DATA.csv",
+      "SourceId": "WebAppTry1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\dany\\source\\repos\\backend_GP2\\WebAppTry1\\WebAppTry1\\wwwroot\\",
+      "BasePath": "_content/WebAppTry1",
+      "RelativePath": "MOCK_DATA.csv",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\MOCK_DATA.csv"
     }
   ]
 }

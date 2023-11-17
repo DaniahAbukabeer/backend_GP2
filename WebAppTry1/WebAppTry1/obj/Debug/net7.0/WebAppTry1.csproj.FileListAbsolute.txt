@@ -148,3 +148,4 @@ C:\Users\User\Source\Repos\backend_GP2\WebAppTry1\WebAppTry1\obj\Debug\net7.0\re
 C:\Users\User\Source\Repos\backend_GP2\WebAppTry1\WebAppTry1\obj\Debug\net7.0\WebAppTry1.pdb
 C:\Users\User\Source\Repos\backend_GP2\WebAppTry1\WebAppTry1\obj\Debug\net7.0\WebAppTry1.genruntimeconfig.cache
 C:\Users\User\Source\Repos\backend_GP2\WebAppTry1\WebAppTry1\obj\Debug\net7.0\ref\WebAppTry1.dll
+C:\Users\dany\source\repos\backend_GP2\WebAppTry1\WebAppTry1\bin\Debug\net7.0\CsvHelper.dll

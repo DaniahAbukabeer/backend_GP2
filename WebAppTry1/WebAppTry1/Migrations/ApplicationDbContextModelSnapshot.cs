@@ -37,7 +37,7 @@ namespace WebAppTry1.Migrations
                     b.ToTable("PharmacyProduct");
                 });
 
-            modelBuilder.Entity("WebAppTry1.Models.Comment", b =>
+            modelBuilder.Entity("WebAppTry1.Models.FeedBack", b =>
                 {
                     b.Property<int>("UserId")
                         .HasColumnType("int");
@@ -64,7 +64,7 @@ namespace WebAppTry1.Migrations
 
                     b.HasIndex("PharmacyId");
 
-                    b.ToTable("Comment");
+                    b.ToTable("FeedBack");
                 });
 
             modelBuilder.Entity("WebAppTry1.Models.Pharmacy", b =>
@@ -166,6 +166,9 @@ namespace WebAppTry1.Migrations
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
+                    b.Property<int?>("ReceiptId")
+                        .HasColumnType("int");
+
                     b.Property<string>("SName")
                         .IsRequired()
                         .HasMaxLength(60)
@@ -186,7 +189,34 @@ namespace WebAppTry1.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("ReceiptId");
+
                     b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("WebAppTry1.Models.Receipt", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("NumOfProducts")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PharmacistName")
+                        .HasColumnType("int");
+
+                    b.Property<int>("RreceiptNum")
+                        .HasColumnType("int");
+
+                    b.Property<double>("TotalPrice")
+                        .HasColumnType("float");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("receipts");
                 });
 
             modelBuilder.Entity("WebAppTry1.Models.User", b =>
@@ -221,6 +251,17 @@ namespace WebAppTry1.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Latitude = 32.234524,
+                            Longitude = 23.234632000000001,
+                            Password = "password12345678",
+                            PhoneNumber = "0791234567",
+                            UserName = "Test1"
+                        });
                 });
 
             modelBuilder.Entity("WebAppTry1.Models.UserProduct", b =>
@@ -256,16 +297,16 @@ namespace WebAppTry1.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("WebAppTry1.Models.Comment", b =>
+            modelBuilder.Entity("WebAppTry1.Models.FeedBack", b =>
                 {
                     b.HasOne("WebAppTry1.Models.Pharmacy", "Pharmacy")
-                        .WithMany("Comment")
+                        .WithMany("FeedBack")
                         .HasForeignKey("PharmacyId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("WebAppTry1.Models.User", "Users")
-                        .WithMany("Comments")
+                        .WithMany("FeedBacks")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -273,6 +314,13 @@ namespace WebAppTry1.Migrations
                     b.Navigation("Pharmacy");
 
                     b.Navigation("Users");
+                });
+
+            modelBuilder.Entity("WebAppTry1.Models.Product", b =>
+                {
+                    b.HasOne("WebAppTry1.Models.Receipt", null)
+                        .WithMany("Products")
+                        .HasForeignKey("ReceiptId");
                 });
 
             modelBuilder.Entity("WebAppTry1.Models.UserProduct", b =>
@@ -296,7 +344,7 @@ namespace WebAppTry1.Migrations
 
             modelBuilder.Entity("WebAppTry1.Models.Pharmacy", b =>
                 {
-                    b.Navigation("Comment");
+                    b.Navigation("FeedBack");
                 });
 
             modelBuilder.Entity("WebAppTry1.Models.Product", b =>
@@ -304,9 +352,14 @@ namespace WebAppTry1.Migrations
                     b.Navigation("UserProducts");
                 });
 
+            modelBuilder.Entity("WebAppTry1.Models.Receipt", b =>
+                {
+                    b.Navigation("Products");
+                });
+
             modelBuilder.Entity("WebAppTry1.Models.User", b =>
                 {
-                    b.Navigation("Comments");
+                    b.Navigation("FeedBacks");
 
                     b.Navigation("UserProducts");
                 });

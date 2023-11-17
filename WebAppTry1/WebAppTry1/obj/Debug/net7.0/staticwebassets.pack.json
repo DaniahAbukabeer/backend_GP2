@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\WebAppTry1.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\dany\\source\\repos\\backend_GP2\\WebAppTry1\\WebAppTry1\\wwwroot\\MOCK_DATA.csv",
+      "PackagePath": "staticwebassets\\MOCK_DATA.csv"
+    },
+    {
       "Id": "C:\\Users\\dany\\source\\repos\\backend_GP2\\WebAppTry1\\WebAppTry1\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

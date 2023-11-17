@@ -40,7 +40,7 @@ namespace WebAppTry1.Migrations
                     b.ToTable("PharmacyProduct");
                 });
 
-            modelBuilder.Entity("WebAppTry1.Models.Comment", b =>
+            modelBuilder.Entity("WebAppTry1.Models.FeedBack", b =>
                 {
                     b.Property<int>("UserId")
                         .HasColumnType("int");
@@ -67,7 +67,7 @@ namespace WebAppTry1.Migrations
 
                     b.HasIndex("PharmacyId");
 
-                    b.ToTable("Comment");
+                    b.ToTable("FeedBack");
                 });
 
             modelBuilder.Entity("WebAppTry1.Models.Pharmacy", b =>
@@ -259,16 +259,16 @@ namespace WebAppTry1.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("WebAppTry1.Models.Comment", b =>
+            modelBuilder.Entity("WebAppTry1.Models.FeedBack", b =>
                 {
                     b.HasOne("WebAppTry1.Models.Pharmacy", "Pharmacy")
-                        .WithMany("Comment")
+                        .WithMany("FeedBack")
                         .HasForeignKey("PharmacyId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("WebAppTry1.Models.User", "Users")
-                        .WithMany("Comments")
+                        .WithMany("FeedBacks")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -299,7 +299,7 @@ namespace WebAppTry1.Migrations
 
             modelBuilder.Entity("WebAppTry1.Models.Pharmacy", b =>
                 {
-                    b.Navigation("Comment");
+                    b.Navigation("FeedBack");
                 });
 
             modelBuilder.Entity("WebAppTry1.Models.Product", b =>
@@ -309,7 +309,7 @@ namespace WebAppTry1.Migrations
 
             modelBuilder.Entity("WebAppTry1.Models.User", b =>
                 {
-                    b.Navigation("Comments");
+                    b.Navigation("FeedBacks");
 
                     b.Navigation("UserProducts");
                 });
