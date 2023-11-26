@@ -1,0 +1,39 @@
+﻿@model Pharmacy
+@{
+    ViewData["Title"] = "Adding New Pharmacy";
+}
+
+
+
+
+
+<form method="post">
+    <div class="col-10">
+        <div class="row">
+            <label>Pharmacy Name</label>
+            <input class="form-control" type="text" asp-for="@Model.Name"/>
+
+        </div>
+        <div class="row">
+            <lable>Pharmacy Phone Number</lable>
+            <input class="form-control type="tel" asp-for="PhoneNumber" />
+        </div>
+            <lable>Working Hours</lable>
+        <div class="row row-cols-lg-2 row-cols-md-2">
+            <div class="col-5">
+                <label>Starts</label>
+                <input class="form-control" type="time" />
+            </div>
+            <div class="col-5">
+                <label>Ends</label>
+                <input class="form-control" type="time" />
+            </div>
+
+        </div>
+
+        <div class="my-5 mx-1">
+            <button type="submit" class="btn btn-dark">Add</button>
+            <a class="btn btn-outline-danger" asp-action="Index">Cancel</a>
+        </div>
+    </div>
+</form>

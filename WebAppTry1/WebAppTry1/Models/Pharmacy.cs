@@ -14,8 +14,8 @@ namespace WebAppTry1.Models
         [Required]
         [MaxLength(10)]
         public string PhoneNumber { get; set; }
-        [Required]
-        public TimeSpan workingHours { get; set; }
+        //[Required]
+        //public TimeSpan workingHours { get; set; }//for testing removed!
         //[Required]
         //public GeoCoordinate Location { get; set; }
         [Required]

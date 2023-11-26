@@ -29,5 +29,10 @@ namespace WebAppTry1.Controllers
         {
             return View();
         }
+
+        [HttpGet]
+        public IActionResult AddPharmacy() {
+            return View();
+        }
     }
 }
