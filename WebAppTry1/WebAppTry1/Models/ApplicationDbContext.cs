@@ -4,7 +4,7 @@ using System.Globalization;
 
 namespace WebAppTry1.Models
 {
-    internal class ApplicationDbContext : DbContext 
+    public class ApplicationDbContext : DbContext 
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
@@ -51,6 +51,17 @@ namespace WebAppTry1.Models
                     
                 });
 
+            modelBuilder.Entity<ReceiptsProducts>()
+                .HasKey(e => new { e.Id, e.ProductId });
+
+            //modelBuilder.Entity<ReceiptsProducts>()
+            //    .HasOne(e=>e.ProductInfo)
+            //    .WithOne(e=>e.)
+
+                //.HasOne(e=>e.Receipt)
+                //.WithMany(e=>e.ReceiptsProducts)
+                //.HasForeignKey()
+
 
            
         }
@@ -58,11 +69,12 @@ namespace WebAppTry1.Models
 
         //}
 
-        public DbSet<Receipt> receipts { get; set; }
+        //public DbSet<Receipt> receipts { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Pharmacy> Pharmacies { get; set;}
         public DbSet<Product> Products { get; set; }
-        //public DbSet<FeedBackModel> FeedBacks { get; set; }
+        public DbSet<FeedBack> FeedBacks { get; set; }
+        //public DbSet<>
         //puclic DbSet<>
     }
 }

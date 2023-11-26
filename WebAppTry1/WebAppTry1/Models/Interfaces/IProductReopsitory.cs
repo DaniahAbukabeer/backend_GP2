@@ -6,6 +6,6 @@
         IEnumerable<Product> GetProducts();
         Product addProduct(Product product);
         Product updateProduct(Product product);
-        Product DeleteProduct(Product product);
+        Product DeleteProduct(int id);
     }
 }

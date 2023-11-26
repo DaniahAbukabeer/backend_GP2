@@ -1,6 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting;
 using WebAppTry1.Models;
+using WebAppTry1.Models.Interfaces;
+using WebAppTry1.Models.sqlRepo;
 
 namespace WebAppTry1
 {
@@ -12,6 +14,10 @@ namespace WebAppTry1
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddScoped<IUserRepository, UserSqlRepository>();
+            builder.Services.AddScoped<IPharmacyRepository, PharmacySqlRepository>();
+            builder.Services.AddScoped<IProductReopsitory, ProductSqlReopsitory>();
+            builder.Services.AddScoped<IFeedBackReopsitory, FeedBackSqlRepository>();
             //builder.Services.AddSqlServer()
             builder.Services.AddDbContextPool<ApplicationDbContext>(
                 options => options.UseSqlServer(
@@ -24,8 +30,8 @@ namespace WebAppTry1
             //    var dbContext = services.GetRequiredService<ApplicationDbContext>();
             //    ApplicationDbContext.SeedData(dbContext);
             //}
-            
-            //builder.Services.AddSingleton<>
+
+            //builder.Services.AddSingleton<IUserRepository, UserSqlRepository>();
 
             var app = builder.Build();
             //ApplicationDbContext dbContext;
