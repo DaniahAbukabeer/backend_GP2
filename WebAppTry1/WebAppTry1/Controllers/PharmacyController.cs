@@ -1,37 +1,50 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using WebAppTry1.Models;
 
 namespace WebAppTry1.Controllers
 {
     public class PharmacyController : Controller
     {
-        public IActionResult Index()
+        public PharmacyController()
+        {
+
+        }
+        public ViewResult Index()
         {
             return View();
         }
 
         [HttpGet]
-        public IActionResult AddStock()
+        public ViewResult AddStock()
         {
             return View();
         }
 
         [HttpGet]
-        public IActionResult EditStock()
+        public ViewResult EditStock()
         {
             return View();
         }
 
-        public IActionResult Selling() { 
+        public ViewResult Selling() { 
             return View();
         }
         [HttpGet]
-        public IActionResult Receipt()
+        public ViewResult Receipt()
         {
             return View();
         }
 
         [HttpGet]
-        public IActionResult AddPharmacy() {
+        public ViewResult AddPharmacy() {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult AddPharmacy(Pharmacy pharmacy)
+        {
+            Pharmacy newPharmacy = 
+
             return View();
         }
     }
