@@ -25,37 +25,37 @@ namespace WebAppTry1.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("CommentModelPharmacyModel", b =>
+            modelBuilder.Entity("FeedBackModelPharmacyModel", b =>
                 {
-                    b.Property<int>("CommentId")
+                    b.Property<int>("FeedBackId")
                         .HasColumnType("int");
 
                     b.Property<int>("PharmacyId")
                         .HasColumnType("int");
 
-                    b.HasKey("CommentId", "PharmacyId");
+                    b.HasKey("FeedBackId", "PharmacyId");
 
                     b.HasIndex("PharmacyId");
 
-                    b.ToTable("CommentModelPharmacyModel");
+                    b.ToTable("FeedBackModelPharmacyModel");
                 });
 
-            modelBuilder.Entity("PharmacyModelProdoctModel", b =>
+            modelBuilder.Entity("PharmacyModelProductModel", b =>
                 {
                     b.Property<int>("PharmacyId")
                         .HasColumnType("int");
 
-                    b.Property<int>("ProdoctId")
+                    b.Property<int>("ProductId")
                         .HasColumnType("int");
 
-                    b.HasKey("PharmacyId", "ProdoctId");
+                    b.HasKey("PharmacyId", "ProductId");
 
-                    b.HasIndex("ProdoctId");
+                    b.HasIndex("ProductId");
 
-                    b.ToTable("PharmacyModelProdoctModel");
+                    b.ToTable("PharmacyModelProductModel");
                 });
 
-            modelBuilder.Entity("WebAppTry1.Models.CommentModel", b =>
+            modelBuilder.Entity("WebAppTry1.Models.FeedBackModel", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -80,7 +80,7 @@ namespace WebAppTry1.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("CommentModel");
+                    b.ToTable("FeedBackModel");
                 });
 
             modelBuilder.Entity("WebAppTry1.Models.PharmacyModel", b =>
@@ -124,7 +124,7 @@ namespace WebAppTry1.Migrations
                     b.ToTable("Pharmacies");
                 });
 
-            modelBuilder.Entity("WebAppTry1.Models.ProdoctModel", b =>
+            modelBuilder.Entity("WebAppTry1.Models.ProductModel", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -236,11 +236,11 @@ namespace WebAppTry1.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("CommentModelPharmacyModel", b =>
+            modelBuilder.Entity("FeedBackModelPharmacyModel", b =>
                 {
-                    b.HasOne("WebAppTry1.Models.CommentModel", null)
+                    b.HasOne("WebAppTry1.Models.FeedBackModel", null)
                         .WithMany()
-                        .HasForeignKey("CommentId")
+                        .HasForeignKey("FeedBackId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -251,7 +251,7 @@ namespace WebAppTry1.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("PharmacyModelProdoctModel", b =>
+            modelBuilder.Entity("PharmacyModelProductModel", b =>
                 {
                     b.HasOne("WebAppTry1.Models.PharmacyModel", null)
                         .WithMany()
@@ -259,9 +259,9 @@ namespace WebAppTry1.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("WebAppTry1.Models.ProdoctModel", null)
+                    b.HasOne("WebAppTry1.Models.ProductModel", null)
                         .WithMany()
-                        .HasForeignKey("ProdoctId")
+                        .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

@@ -12,7 +12,7 @@ namespace WebAppTry1.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "CommentModel",
+                name: "FeedBackModel",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -24,7 +24,7 @@ namespace WebAppTry1.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CommentModel", x => x.Id);
+                    table.PrimaryKey("PK_FeedBackModel", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -92,23 +92,23 @@ namespace WebAppTry1.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "CommentModelPharmacyModel",
+                name: "FeedBackModelPharmacyModel",
                 columns: table => new
                 {
-                    CommentId = table.Column<int>(type: "int", nullable: false),
+                    FeedBackId = table.Column<int>(type: "int", nullable: false),
                     PharmacyId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CommentModelPharmacyModel", x => new { x.CommentId, x.PharmacyId });
+                    table.PrimaryKey("PK_FeedBackModelPharmacyModel", x => new { x.FeedBackId, x.PharmacyId });
                     table.ForeignKey(
-                        name: "FK_CommentModelPharmacyModel_CommentModel_CommentId",
-                        column: x => x.CommentId,
-                        principalTable: "CommentModel",
+                        name: "FK_FeedBackModelPharmacyModel_FeedBackModel_FeedBackId",
+                        column: x => x.FeedBackId,
+                        principalTable: "FeedBackModel",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_CommentModelPharmacyModel_Pharmacies_PharmacyId",
+                        name: "FK_FeedBackModelPharmacyModel_Pharmacies_PharmacyId",
                         column: x => x.PharmacyId,
                         principalTable: "Pharmacies",
                         principalColumn: "Id",
@@ -116,54 +116,54 @@ namespace WebAppTry1.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "PharmacyModelProdoctModel",
+                name: "PharmacyModelProductModel",
                 columns: table => new
                 {
                     PharmacyId = table.Column<int>(type: "int", nullable: false),
-                    ProdoctId = table.Column<int>(type: "int", nullable: false)
+                    ProductId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_PharmacyModelProdoctModel", x => new { x.PharmacyId, x.ProdoctId });
+                    table.PrimaryKey("PK_PharmacyModelProductModel", x => new { x.PharmacyId, x.ProductId });
                     table.ForeignKey(
-                        name: "FK_PharmacyModelProdoctModel_Pharmacies_PharmacyId",
+                        name: "FK_PharmacyModelProductModel_Pharmacies_PharmacyId",
                         column: x => x.PharmacyId,
                         principalTable: "Pharmacies",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_PharmacyModelProdoctModel_Products_ProdoctId",
-                        column: x => x.ProdoctId,
+                        name: "FK_PharmacyModelProductModel_Products_ProductId",
+                        column: x => x.ProductId,
                         principalTable: "Products",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_CommentModelPharmacyModel_PharmacyId",
-                table: "CommentModelPharmacyModel",
+                name: "IX_FeedBackModelPharmacyModel_PharmacyId",
+                table: "FeedBackModelPharmacyModel",
                 column: "PharmacyId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_PharmacyModelProdoctModel_ProdoctId",
-                table: "PharmacyModelProdoctModel",
-                column: "ProdoctId");
+                name: "IX_PharmacyModelProductModel_ProductId",
+                table: "PharmacyModelProductModel",
+                column: "ProductId");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "CommentModelPharmacyModel");
+                name: "FeedBackModelPharmacyModel");
 
             migrationBuilder.DropTable(
-                name: "PharmacyModelProdoctModel");
+                name: "PharmacyModelProductModel");
 
             migrationBuilder.DropTable(
                 name: "Users");
 
             migrationBuilder.DropTable(
-                name: "CommentModel");
+                name: "FeedBackModel");
 
             migrationBuilder.DropTable(
                 name: "Pharmacies");

@@ -3,11 +3,11 @@ using System.ComponentModel.DataAnnotations;
 
 namespace WebAppTry1.Models
 {
-    public class UserModel
+    public class User
     {
         [Key]
         public int Id { get; set; }
-        [Required(ErrorMessage ="User Name is required")]
+        [Required(ErrorMessage ="user name is required")]
         [MaxLength(30)]
         public string UserName { get; set; }
 
@@ -15,7 +15,7 @@ namespace WebAppTry1.Models
         [MaxLength(30)]
         [PasswordPropertyText]
         public string Password { get; set; }
-        [Required(ErrorMessage="Phone number is required")]
+        [Required(ErrorMessage ="Phone number is required")]
         [MaxLength(13)]
         [MinLength(13)]
         public string PhoneNumber { get; set; }
@@ -23,7 +23,12 @@ namespace WebAppTry1.Models
         public  double Latitude { get; set; }
         public double Longitude { get; set; }
 
-        //public enum UserRole
+        public List<FeedBack> FeedBacks { get; set; }
+
+
+        public List<UserProduct> UserProducts { get; } = new(); 
+
+        //public enum UserRole {get; set; }
 
 
 

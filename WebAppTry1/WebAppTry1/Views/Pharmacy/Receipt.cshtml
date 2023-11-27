@@ -20,30 +20,38 @@
             <div class=" col-8 mx-2 ">
                
                    
+             
+                    
                         <a href="#" class="nav-item mx-2">Pharmacy Name</a>
                     
-                    
+                
                         <a href="#" class="nav-item">current Pharmacis</a>
+                    
+                
                         
-                        @* <span class="me-auto">  *@<button class=" btn btn-light bg-light my-2">Search</button> @* </span> *@
-                                                     <span><input type="search" class="form-control" placeholder="type name" /></span>
+                <form class="form-inline my-2 my-lg-0" id="SearchForm">
+                    <input type="search" style="display:inline;" class="form-control me-sm-2" aria-label="Search" placeholder="type name" />
+                    <button  type="submit" style="display:inline;" class=" btn btn-light bg-light my-2 my-sm-0">Search</button>
+                </form>
             </div>
 
+        </div>
+@*
             <div >      
 @*                 <div >
                     <input type="search" class="form-control col-4" placeholder="Search for product by name?" />
 
-                </div> *@
+                </div> 
                 <div>
-                    @* <button class="btn btn-check btn-light">Search</button> *@
-                </div>
+                    @* <button class="btn btn-check btn-light">Search</button> 
+                </div>*@
     </row>
-    <row class="row row-cols-2">
+@*    <row class="row row-cols-2">
         <div class="card  align-content-center col-6">
             <img src="~/images/pexels-karolina-grabowska-4021811.jpg" class="align-self-center card-img"/>
             <div class="card-body">
                 <p class="card-text ">
-                    @*text-light bg-dark*@
+                    @*text-light bg-dark
                     <h4>Products' Name</h4>
                     info info info info info
                     test test test test test
@@ -52,6 +60,7 @@
             
         </div>
     </row>
+*@
     <row class="row justify-content-center">
         <div class=" col col-8 ">
             <form method="post" class="form form-control">

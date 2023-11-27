@@ -2,7 +2,7 @@
 
 namespace WebAppTry1.Models
 {
-    public class ProdoctModel
+    public class Product
     {
         [Key]
         public int Id { get; set; } // code == number
@@ -42,7 +42,9 @@ namespace WebAppTry1.Models
         
         public double Discount { get; set; }
 
-        public List<PharmacyModel> Pharmacy { get; set;}//every product can be in one or more pharmacies!
+        public int UserId { get; set; }
+        public List<UserProduct> UserProducts { get; } = new();
+        public List<Pharmacy> Pharmacy { get; set;}//every product can be in one or more pharmacies!
 
 
     }
