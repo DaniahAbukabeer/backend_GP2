@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿//using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 //using System.Device.Location.GeoCoordinate;
 namespace WebAppTry1.Models
@@ -7,13 +7,13 @@ namespace WebAppTry1.Models
     {
         [Key]
         public int Id { get; set; }
-        [Required]
+        [Required(ErrorMessage ="Pharmacys' name is required")]
         [MaxLength(50)]
         public string Name { get; set; }
-        [Required]
+        [Required(ErrorMessage ="Pharmacys' phone number is required")]
         [MaxLength(10)]
         public string PhoneNumber { get; set; }
-        [Required]
+        [Required(ErrorMessage ="Phamracys' Schedual is required")]
         public TimeSpan workingHours { get; set; }
         //[Required]
         //public GeoCoordinate Location { get; set; }
@@ -23,7 +23,6 @@ namespace WebAppTry1.Models
         public double Longitude { get; set; }
         [MaxLength(150)]
         public string Description { get; set; }
-        [Required]
         [MaxLength(5)]
         public float Ratting { get; set; }//this is the average ratting of each pharamcy! (sum of all comments/number)
 
