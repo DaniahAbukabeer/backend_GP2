@@ -43,7 +43,7 @@ namespace WebAppTry1.Controllers
         [HttpPost]
         public IActionResult AddPharmacy(Pharmacy pharmacy)
         {
-            Pharmacy newPharmacy = 
+            //Pharmacy newPharmacy = 
 
             return View();
         }
