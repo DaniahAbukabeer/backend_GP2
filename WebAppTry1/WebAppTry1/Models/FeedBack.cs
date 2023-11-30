@@ -15,7 +15,7 @@ namespace WebAppTry1.Models
 
         [Required]//so we make the ratting required but the FeedBack is not,
         [MaxLength(5)]//so someone can leave a ratting but cant leave a FeedBack without ratting!
-        public float Ratting { get; set; }//this is the indivisual ratting for every FeedBack,
+        public double Ratting { get; set; }//this is the indivisual ratting for every FeedBack,
 
         public int UserId { get; set; }
         public int PharmacyId { get; set; }

@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<Product>
+@{
     ViewData["Title"] = "Edit stock";
 }
 <h1>@ViewData["Title"]</h1>
@@ -19,55 +20,68 @@
 <div class="container">
     <section class="table-responsive">
             <!--Table-->
+        @if(Model != null){
             <table class="table table-hover table-fixed">
                 <!--Table head-->
                 <thead>
                     <tr>
-                        <th>Code</th>
-                        <th>product Name</th>
+                        <th>ATC CODE</th>
+                        <th>Trade Name</th>
                         <th>dosage</th>
                         <th>price</th>
                         <th>Quantity</th>
-                        <th>Expire Date</th>
-                        <th>Discount</th>
-                        <th>Tax</th>
-                        <th>Total Price</th>
+                        @* <th>Expire Date</th>*@
+                        <th>BarCode</th>
+                        <th>Amount</th>
+                        <th>Price</th>
                         <th>Edit</th>
                     </tr>
                 </thead>
                 <!--Table head-->
                 <!--Table body-->
                 <tbody>
-                    <tr>
-                        <th class="col-1" scope="row"><input class="form-control" disabled type="number" /></th>
-                    <td class="col-1"><input class="form-control" disabled type="text" /></td>
-                    <td class="col-1"><input class="form-control" disabled type="number" min="0" /><label>mg</label> </td>
-                    <td class="col-1"><input class="form-control" disabled type="number" min="0" /></td>
-                    <td class="col-1"><input class="form-control" disabled type="number" min="1" /></td>
-                    <td class="col-1"><input class="form-control" disabled type="date" /></td>
-                    <td class="col-1"><input class="form-control" disabled type="number" min="0" /></td>
-                    <td class="col-1"><input class="form-control" disabled type="number" min="0" /></td>
-                    <td class="col-1"><input class="form-control" disabled type="number" min="0" /></td>
-                    <td class="col-1"><a class="btn btn-dark form-control" asp-action="Selling" asp-controller="Pharmacy">Edit</a></td>
 
+                    @foreach (var product in Model)
+                    {
+
+                        @* <tr>
+                        <th class="col-1" scope="row"><input class="form-control" asp-for="@product.ATCCODE" disabled type="number" /></th>
+                        <td class="col-1"><input class="form-control" asp-for="@product.TName" disabled type="text" /></td>
+                        <td class="col-1"><input class="form-control" asp-for="@product.Dosage" disabled type="number" min="0" /><label>mg</label> </td>
+                        <td class="col-1"><input class="form-control" asp-for="@(product.PrivatePrice)"disabled type="number" min="0" /></td>
+                        <td class="col-1"><input class="form-control" asp-for="@product.Quantity" disabled type="number" min="1" /></td>
+                        @*<td class="col-1"><input class="form-control" asp-for="@product.ExpireDate" disabled type="date" /></td>
+                        <td class="col-1"><input class="form-control" asp-for="@product.BarCode" disabled type="number" min="0" /></td>
+                        <td class="col-1"><input class="form-control" asp-for="@product.Amount" disabled type="number" min="0" /></td>
+                        <td class="col-1"><input class="form-control" asp-for="@product.PublicPrice" disabled type="number" min="0" /></td>
+                        <td class="col-1"><a class="btn btn-dark form-control" asp-action="Selling" asp-controller="Pharmacy" asp-route-id="@product.Id">Edit</a></td>
+
+                    </tr>*@
+
+                        <tr>
+                            <th class="col-1" scope="row">@(product.ATCCODE ?? "N/A")</th>
+                            <td class="col-1">@(product.TName ?? "N/A")</td>
+                            <td class="col-1">@(product.Dosage.ToString() ?? "N/A")></td>
+                            <td class="col-1">@(product.PrivatePrice.ToString() ?? "N/A")</td>
+                            <td class="col-1">@(product.Quantity.ToString() ?? "N/A")</td>
+                            <td class="col-1">@(product.BarCode.ToString() ?? "N/A")</td>
+                            <td class="col-1">@(product.Amount.ToString() ?? "N/A")</td>
+                            <td class="col-1">@(product.PublicPrice.ToString() ?? "N/A")</td>
+                            <td class="col-1"><a class="btn btn-dark form control" asp-action="Selling" asp-controller="Pharmacy" asp-route-Id="@product.Id">Edit</a></td>
                     </tr>
-                    <tr>
-                    <th class="col-1" scope="row"><input class="form-control" disabled type="number" /></th>
-                    <td class="col-1"><input class="form-control" disabled type="text" /></td>
-                    <td class="col-1"><input class="form-control" disabled type="number" min="0" /> <label>mg</label></td>
-                    <td class="col-1"><input class="form-control" disabled type="number" min="0" /></td>
-                    <td class="col-1"><input class="form-control" disabled type="number" min="1" /></td>
-                    <td class="col-1"><input class="form-control" disabled type="date" /></td>
-                    <td class="col-1"><input class="form-control" disabled type="number" min="0" /></td>
-                    <td class="col-1"><input class="form-control" disabled type="number" min="0" /></td>
-                    <td class="col-1"><input class="form-control" disabled type="number" min="0" /></td>
-                    <td class="col-1"><a class="btn btn-dark form-control" asp-action="Selling" asp-controller="Pharmacy">Edit</a></td>
-                    </tr>
-                    
+                    }
                 </tbody>
                 <!--Table body-->
             </table>
             <!--Table-->
-        
+        }
+        else
+        {
+            <div class="align-content-center mx-3 px-2">
+                <h3>There is no stock yet!</h3>
+                <h5>Add some?</h5>
+                <a asp-action="AddStock" class="btn btn-dark">Add stock</a>
+            </div>    
+        }
     </section>
 </div>

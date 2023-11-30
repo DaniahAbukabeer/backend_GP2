@@ -23,26 +23,30 @@ namespace WebAppTry1.Models
         public double PublicPrice  { get; set; }//price ppl buy at
         public double PulbicPriceWTax { get; set; }// price with tax
         [MaxLength(13)]
-        [MinLength(13)]
-        public int BarCode { get; set; }
+        [MinLength(12)]
+        public string BarCode { get; set; }
 
         public int Quantity { get; set; }
 
+        public double Dosage { get; set; }
+
+
         [MaxLength(7)]
-        [MinLength(7)]
+        [MinLength(6)]
         public string ATCCODE { get; set; }//universal code to help categoires medications
 
-        [MinLength(1)]
+        //[MinLength(1)]
         public int Amount { get; set; }//the number of pills/tablets 
         public double PrivatePrice { get; set; }//price pharmacy buy at
         //[Range()] how to set up restrections on the date such it cannot be in the past
-        public DateTime ExpireDate { get; set; }
+        //public DateTime ExpireDate { get; set; }//for debugging remove this
         [MaxLength(150)]
         public string Discreption { get; set; }
         
         public double Discount { get; set; }
 
         public int UserId { get; set; }
+        public int PharmacyId { get; set; }//to be forigen key for the pharmacy
         public List<UserProduct> UserProducts { get; } = new();
         public List<Pharmacy> Pharmacy { get; set;}//every product can be in one or more pharmacies!
 

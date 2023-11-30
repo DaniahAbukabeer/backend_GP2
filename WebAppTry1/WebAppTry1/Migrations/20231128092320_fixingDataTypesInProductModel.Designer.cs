@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebAppTry1.Models;
 
@@ -11,9 +12,11 @@ using WebAppTry1.Models;
 namespace WebAppTry1.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231128092320_fixingDataTypesInProductModel")]
+    partial class fixingDataTypesInProductModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -121,10 +124,9 @@ namespace WebAppTry1.Migrations
                     b.Property<int>("Amount")
                         .HasColumnType("int");
 
-                    b.Property<string>("BarCode")
-                        .IsRequired()
+                    b.Property<int>("BarCode")
                         .HasMaxLength(13)
-                        .HasColumnType("nvarchar(13)");
+                        .HasColumnType("int");
 
                     b.Property<string>("Country")
                         .IsRequired()
@@ -139,16 +141,16 @@ namespace WebAppTry1.Migrations
                         .HasMaxLength(150)
                         .HasColumnType("nvarchar(150)");
 
-                    b.Property<double>("Dosage")
-                        .HasColumnType("float");
+                    b.Property<int>("Dosage")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("ExpireDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("LocalAgent")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
-
-                    b.Property<int>("PharmacyId")
-                        .HasColumnType("int");
 
                     b.Property<double>("PrivatePrice")
                         .HasColumnType("float");
@@ -188,30 +190,6 @@ namespace WebAppTry1.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Products");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 3,
-                            ATCCODE = "12345",
-                            Amount = 24,
-                            BarCode = "1234567890123",
-                            Country = "test country",
-                            Discount = 0.0,
-                            Discreption = "test discreption",
-                            Dosage = 500.0,
-                            LocalAgent = "test agent",
-                            PharmacyId = 3,
-                            PrivatePrice = 2.0,
-                            Provider = "test provider",
-                            PublicPrice = 3.0,
-                            PulbicPriceWTax = 3.5,
-                            Quantity = 10,
-                            SName = "Scientific name",
-                            TName = "Trade name",
-                            UserId = 1,
-                            number = "12345"
-                        });
                 });
 
             modelBuilder.Entity("WebAppTry1.Models.ReceiptInfo", b =>
