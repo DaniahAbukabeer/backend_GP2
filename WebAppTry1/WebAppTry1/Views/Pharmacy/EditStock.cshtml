@@ -1,4 +1,5 @@
-﻿@model IEnumerable<Product>
+﻿@*@model WebAppTry1.Models.PharmacyProductsViewModel*@
+@model IEnumerable<Product>
 @{
     ViewData["Title"] = "Edit stock";
 }
@@ -28,10 +29,10 @@
                         <th>ATC CODE</th>
                         <th>Trade Name</th>
                         <th>dosage</th>
-                        <th>price</th>
+                        @*<th>price</th>*@
                         <th>Quantity</th>
                         @* <th>Expire Date</th>*@
-                        <th>BarCode</th>
+                        @*<th>BarCode</th>*@
                         <th>Amount</th>
                         <th>Price</th>
                         <th>Edit</th>
@@ -62,9 +63,9 @@
                             <th class="col-1" scope="row">@(product.ATCCODE ?? "N/A")</th>
                             <td class="col-1">@(product.TName ?? "N/A")</td>
                             <td class="col-1">@(product.Dosage.ToString() ?? "N/A")></td>
-                            <td class="col-1">@(product.PrivatePrice.ToString() ?? "N/A")</td>
+                            @*<td class="col-1">@(product.PrivatePrice.ToString() ?? "N/A")</td>*@
                             <td class="col-1">@(product.Quantity.ToString() ?? "N/A")</td>
-                            <td class="col-1">@(product.BarCode.ToString() ?? "N/A")</td>
+                            @*<td class="col-1">@(product.BarCode.ToString() ?? "N/A")</td>*@
                             <td class="col-1">@(product.Amount.ToString() ?? "N/A")</td>
                             <td class="col-1">@(product.PublicPrice.ToString() ?? "N/A")</td>
                             <td class="col-1"><a class="btn btn-dark form control" asp-action="Selling" asp-controller="Pharmacy" asp-route-Id="@product.Id">Edit</a></td>

@@ -5,8 +5,12 @@ namespace WebAppTry1.Models
 {
     public class FeedBack
     {
-        
-        
+
+        public FeedBack()
+        {
+            Users = new User();
+            Pharmacy = new Pharmacy();
+        }
 
         public bool Statues { get; set; }//true => active, fauls => removed
         public string Text { get; set; }// the content of the FeedBack

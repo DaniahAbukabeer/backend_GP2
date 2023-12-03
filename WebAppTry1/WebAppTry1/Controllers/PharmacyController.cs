@@ -23,6 +23,7 @@ namespace WebAppTry1.Controllers
         [HttpGet]
         public ViewResult AddStock()
         {
+            
             return View();
         }
         [HttpPost]
@@ -30,15 +31,26 @@ namespace WebAppTry1.Controllers
             if (ModelState.IsValid)
             {
                 Product NewProduct = _product.addProduct(product);
+
+                //var pharamcyId = _pharmacy.GetPharmacy();
                 return RedirectToAction("Index",NewProduct);
             }
             return View();
         }
 
         [HttpGet]
-        public ViewResult EditStock()
+        public ViewResult EditStock(int Id)
         {
+            var Pharmacyy = _pharmacy.GetPharmacy(Id);
             var AllStock = _product.GetProducts();
+
+            var viewModel = new PharmacyProductsViewModel
+            {
+                Pharmacy = Pharmacyy,
+                Products = AllStock,
+
+            };
+            //return View(viewModel);
             return View(AllStock);
         }
 
@@ -89,7 +101,7 @@ namespace WebAppTry1.Controllers
         [HttpPost]
         public IActionResult AddPharmacy(Pharmacy pharmacy)
         {
-           if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 Pharmacy newPharmacy = _pharmacy.AddPharmacy(pharmacy);
                 //add a difrent return path if you want the user to see the new created pharmacy 

@@ -42,7 +42,7 @@
                             <h6>our customers rattings : @pharmacy.Ratting</h6>
                         </div>
                         <div class="card-footer">
-                            <a class="btn btn-dark" asp-action="AddStock" asp-controller="Pharmacy">Add Stock</a>
+                            <a class="btn btn-dark" asp-action="AddStock" asp-controller="Pharmacy" asp-route-Id="@pharmacy.Id">Add Stock</a>
                             <a class="btn btn-outline-dark" asp-action="EditStock" asp-controller="Pharmacy">View </a>
                                     <a class="btn btn-outline-danger" href="#">Remove </a>
                         </div>

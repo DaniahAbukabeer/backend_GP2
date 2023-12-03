@@ -43,49 +43,49 @@ namespace WebAppTry1.Models
                 new User
                 {
                     Id = 1,
-                    PhoneNumber= "0791234567",
-                    UserName= "Test1",
-                    Password= "password12345678",
-                    Latitude= 32.234524,
-                    Longitude= 23.234632,
-                    
-                    
+                    PhoneNumber = "0791234567",
+                    UserName = "Test1",
+                    Password = "password12345678",
+                    Latitude = 32.234524,
+                    Longitude = 23.234632,
+
+
                 });
 
-            modelBuilder.Entity<Product>().HasData(
-                    new Product
-                    {
-                        Id = 3,
-                        UserId = 1,
-                        TName = "Trade name",
-                        SName = "Scientific name",
-                        number = "12345",
-                        Provider = "test provider",
-                        LocalAgent = "test agent",
-                        Country = "test country",
-                        PublicPrice = 3,
-                        PulbicPriceWTax = 3.5,
-                        BarCode = "1234567890123",
-                        Quantity = 10,
-                        Dosage = 500,
-                        ATCCODE = "12345",
-                        Amount = 24,
-                        PrivatePrice = 2,
-                        Discreption = "test discreption",
-                        PharmacyId= 3,
-                        //UserProducts = new List<UserProduct> { 
-                        //    new UserProduct { 
-                        //        UserId =1,
-                        //        ProductId = 3,
-                        //        user
-                        //    }
-                        //}
+            //modelBuilder.Entity<Product>().HasData(
+            //        new Product
+            //        {
+            //            Id = 3,
+            //            UserId = 1,
+            //            TName = "Trade name",
+            //            SName = "Scientific name",
+            //            number = "12345",
+            //            Provider = "test provider",
+            //            LocalAgent = "test agent",
+            //            Country = "test country",
+            //            PublicPrice = 3,
+            //            PulbicPriceWTax = 3.5,
+            //            BarCode = "1234567890123",
+            //            Quantity = 10,
+            //            Dosage = 500,
+            //            ATCCODE = "12345",
+            //            Amount = 24,
+            //            PrivatePrice = 2,
+            //            Discreption = "test discreption",
+            //            PharmacyId= 3,
+            //            //UserProducts = new List<UserProduct> { 
+            //            //    new UserProduct { 
+            //            //        UserId =1,
+            //            //        ProductId = 3,
+            //            //        user
+            //            //    }
+            //            //}
 
 
 
 
-                    }
-                );
+            //        }
+            //    );
             //modelBuilder.Entity<Pharmacy>().HasData(
             //    new Pharmacy
             //    {

@@ -5,6 +5,13 @@ namespace WebAppTry1.Models
 {
     public class User
     {
+        public User()
+        {
+            FeedBacks = new List<FeedBack>();
+            UserProducts = new List<UserProduct>();
+        }
+
+
         [Key]
         public int Id { get; set; }
         [Required(ErrorMessage ="user name is required")]
