@@ -49,10 +49,10 @@ namespace WebAppTry1.Models
         //[MinLength(12)]
         //public string BarCode { get; set; }
 
-        
+        //public int Quantity { get; set; }
 
         //[MinLength(1)]
-        //the number of pills/tablets 
+        //public int Amount { get; set; }//the number of pills/tablets 
         //public double PrivatePrice { get; set; }//price pharmacy buy at
         //[Range()] how to set up restrections on the date such it cannot be in the past
         //public DateTime ExpireDate { get; set; }//for debugging remove this
