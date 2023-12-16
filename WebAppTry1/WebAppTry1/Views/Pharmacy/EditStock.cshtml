@@ -64,10 +64,10 @@
                             <td class="col-1">@(product.TName ?? "N/A")</td>
                             <td class="col-1">@(product.Dosage.ToString() ?? "N/A")></td>
                             @*<td class="col-1">@(product.PrivatePrice.ToString() ?? "N/A")</td>*@
-                            <td class="col-1">@(product.Quantity.ToString() ?? "N/A")</td>
+                            @*<td class="col-1">@(product.Quantity.ToString() ?? "N/A")</td>*@
                             @*<td class="col-1">@(product.BarCode.ToString() ?? "N/A")</td>*@
-                            <td class="col-1">@(product.Amount.ToString() ?? "N/A")</td>
-                            <td class="col-1">@(product.PublicPrice.ToString() ?? "N/A")</td>
+                            @*<td class="col-1">@(product.Amount.ToString() ?? "N/A")</td>*@
+                            @*<td class="col-1">@(product.PublicPrice.ToString() ?? "N/A")</td>*@
                             <td class="col-1"><a class="btn btn-dark form control" asp-action="Selling" asp-controller="Pharmacy" asp-route-Id="@product.Id">Edit</a></td>
                     </tr>
                     }

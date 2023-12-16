@@ -19,30 +19,70 @@ namespace WebAppTry1.Controllers
             var model = _pharmacy.GetAllPharmacy();
             return View(model);
         }
-
         [HttpGet]
-        public ViewResult AddStock()
+        public ViewResult AddStock(int PharmacyId)
         {
-            
-            return View();
+            ViewData["PharmacyId"] = PharmacyId;
+
+            var viewmodel = new AddStockViewModel { PharmacyId = PharmacyId };
+
+            return View(viewmodel);
         }
+        //[HttpPost]
+        //public IActionResult AddStock(Product product)
+        //{
+        //   if (ModelState.IsValid)
+        //    {
+        //        Product NewProduct = _product.addProduct(product);
+
+        //        //var pharamcyId = _pharmacy.GetPharmacy();
+        //        return RedirectToAction("Index", NewProduct);
+        //    }
+        //    return View();
+        //}
+        
         [HttpPost]
-        public IActionResult AddStock(Product product) {
+        public IActionResult AddStock(AddStockViewModel model)
+        {
             if (ModelState.IsValid)
             {
-                Product NewProduct = _product.addProduct(product);
+                //Product NewProduct = _product.addProduct(product);
+                //int pharamcyId = model.PharmacyId;
+
+                Product NewProduct = new Product { 
+                    Id = model.ProductId,
+                    TName = model.TName,
+                    SName = model.SName,
+                    Provider= model.Provider,
+                    Country = model.Country,
+                    Dosage = model.Dosage,
+                    ATCCODE = model.ATCCODE,
+                    PharmaysProducts = new List<PharmaysProducts> { new PharmaysProducts()
+                    {
+                        PublicPrice = model.PublicPrice,
+                        Quantity = model.Quantity,
+                        Amount= model.Amount,
+                        PrivatePrice = model.PrivatePrice,
+                        PharmacyId = model.PharmacyId,
+                        ProductId = model.ProductId,
+                    } }
+                };
+
+                _product.addProduct(NewProduct);
+               
 
                 //var pharamcyId = _pharmacy.GetPharmacy();
-                return RedirectToAction("Index",NewProduct);
+                return RedirectToAction("Index", NewProduct);
             }
-            return View();
+            return View(model);
         }
+
 
         [HttpGet]
         public ViewResult EditStock(int Id)
         {
             var Pharmacyy = _pharmacy.GetPharmacy(Id);
-            var AllStock = _product.GetProducts();
+            var AllStock = _product.GetProducts().Where(e => e.PharmaysProducts.Any(ps=> ps.PharmacyId == Id));
 
             var viewModel = new PharmacyProductsViewModel
             {
@@ -59,7 +99,8 @@ namespace WebAppTry1.Controllers
         {
             if (ModelState.IsValid)
             {
-                try { 
+                try
+                {
                     Product updatedProduct = _product.updateProduct(product);
 
                     if (updatedProduct != null)
@@ -83,6 +124,7 @@ namespace WebAppTry1.Controllers
 
             return View();
         }
+
 
         public ViewResult Selling() { 
             return View();
@@ -109,6 +151,20 @@ namespace WebAppTry1.Controllers
             }
 
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult DeletePharmacy(int Id)
+        {
+            Pharmacy ToDelete = _pharmacy.GetPharmacy(Id);
+            if (ToDelete != null) {
+                _pharmacy.DeletePharmacy(Id);
+                
+            }
+
+            return RedirectToAction("Index");
+        
+        
         }
     }
 }

@@ -157,12 +157,29 @@ namespace WebAppTry1.Models
             //    .HasOne(e=>e.ProductInfo)
             //    .WithOne(e=>e.)
 
-                //.HasOne(e=>e.Receipt)
-                //.WithMany(e=>e.ReceiptsProducts)
-                //.HasForeignKey()
+            //.HasOne(e=>e.Receipt)
+            //.WithMany(e=>e.ReceiptsProducts)
+            //.HasForeignKey()
+
+            modelBuilder.Entity<PharmaysProducts>()
+                .HasKey(e => new { e.PharmacyId, e.ProductId });
+
+            modelBuilder.Entity<PharmaysProducts>()
+                .HasOne(e => e.Product)
+                .WithMany(ex => ex.PharmaysProducts)
+                .HasForeignKey(e => e.ProductId);
+
+            modelBuilder.Entity<PharmaysProducts>()
+                .HasOne(e=>e.Pharmacy)
+                .WithMany(ex=>ex.PharmaysProducts)
+                .HasForeignKey(e => e.PharmacyId);
 
 
-           
+            //modelBuilder.Entity<Product>()
+            //    .HasMany(x => x.Pharmacy)
+            //    .WithMany(x => x.Product)
+            //    .HasForignKey(x => x.PharmacyId);
+
         }
         //protected override void onConfiguring(DbContextOptionsBuilder options) { 
 
@@ -173,6 +190,8 @@ namespace WebAppTry1.Models
         public DbSet<Pharmacy> Pharmacies { get; set;}
         public DbSet<Product> Products { get; set; }
         public DbSet<FeedBack> FeedBacks { get; set; }
+
+        public DbSet<PharmaysProducts> pharmaysProducts { get; set; }
         //public DbSet<>
         //puclic DbSet<>
     }

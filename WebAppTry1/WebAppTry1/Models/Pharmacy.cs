@@ -10,7 +10,8 @@ namespace WebAppTry1.Models
         {
             //initailze the lists in the constroctor so its an empty list and not null by default
             FeedBack = new List<FeedBack>();
-            Product = new List<Product>();
+            //Product = new List<Product>();
+            PharmaysProducts = new List<PharmaysProducts>();
         }
 
         [Key]
@@ -39,8 +40,8 @@ namespace WebAppTry1.Models
         //public int NumofFeedBacks { get; set; }//auto increment this every time someone leaves a co
 
         public List<FeedBack> FeedBack { get; set; }//every pharmacy have a list of FeedBacks
-        public List<Product> Product { get; set; }//a pharamcy can have one or more products
+        //public List<Product> Product { get; set; }//a pharamcy can have one or more products
         //public List<PharmaysProducts> PharmaysProducts { get;set; }
-
+        public List<PharmaysProducts> PharmaysProducts { get;set; }
     }
 }

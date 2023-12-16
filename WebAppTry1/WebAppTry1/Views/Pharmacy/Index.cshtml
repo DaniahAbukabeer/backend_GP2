@@ -42,9 +42,11 @@
                             <h6>our customers rattings : @pharmacy.Ratting</h6>
                         </div>
                         <div class="card-footer">
-                            <a class="btn btn-dark" asp-action="AddStock" asp-controller="Pharmacy" asp-route-Id="@pharmacy.Id">Add Stock</a>
-                            <a class="btn btn-outline-dark" asp-action="EditStock" asp-controller="Pharmacy">View </a>
-                                    <a class="btn btn-outline-danger" href="#">Remove </a>
+                            <a class="btn btn-dark" asp-action="AddStock" asp-controller="Pharmacy" asp-route-PharmacyId="@pharmacy.Id">Add Stock</a>
+                            <a class="btn btn-outline-dark" asp-action="EditStock" asp-controller="Pharmacy" asp-route-PharmacyId="@pharmacy.Id" >View </a>
+                                    <form class="d-inline-block" method="post" asp-action="DeletePharmacy" asp-route-Id="@pharmacy.Id">
+                                        <button type="submit" class="btn btn-outline-danger d-inline">Remove </button>
+                                    </form>
                         </div>
                     </div>
                         </div>
