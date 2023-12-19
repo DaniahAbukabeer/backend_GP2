@@ -39,6 +39,8 @@ namespace WebAppTry1.Models
         public string ATCCODE { get; set; }//universal code to help categoires medications
 
         public List<PharmaysProducts> PharmaysProducts { get; set; }
+        //public int PharmacyIdInPro { get; set; }
+        //public List<Pharmacy> pharmacy { get; set; }
         //[MaxLength(50)]
         //[MaxLength(50)]
         //public string number { get; set; }

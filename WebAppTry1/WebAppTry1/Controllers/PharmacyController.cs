@@ -81,44 +81,20 @@ namespace WebAppTry1.Controllers
         [HttpGet]
         public ViewResult EditStock(int PharmacyId)
         {
-            //var Pharmacyy = _pharmacy.GetPharmacy(Id);
+            
 
-            var Stock = _product.GetProducts().Where(e => e.PharmaysProducts.Any(ps => ps.PharmacyId == PharmacyId));
+            var Stock  = _product.GetAllProducts().Where(e=>e.PharmaysProducts.Any(es=>es.PharmacyId == PharmacyId));
 
-
-            //var PharmacyStock = _product.GetProducts()
-            //    .Select(product => new
-            //    {
-            //        Product = product,
-            //        PharmaysProducts = product.PharmaysProducts
-            //    })
-            //    .Where(e => e.PharmaysProducts.Any(ps => ps.PharmacyId == PharmacyId))
-            //    .Select(e => e.Product);
-
-            //var prodctPharmacy = _product.GetProduct(id=> id new { e=>e })
+            
             if (Stock.Any())
                 foreach (var pro in Stock)
                     Console.WriteLine($"----------found product {pro.SName} that belongs to pharmacy with Id {PharmacyId}------------");
             else
                 Console.WriteLine($"-----------------Stock didnt get any data.... AGAIN!!--------------------");
-            //Console.WriteLine($"the routed Pharmacy Id is {PharmacyId}");
+            
             var AllStock = _product.GetProducts();
-            //    .Where(e => e.PharmaysProducts.Any(ps => ps.PharmacyId == PharmacyId))
-            //    .ToList<Product>();
-            // Eager loading example
-            //var AllStock = _product.GetProducts()
-            //    .Include(p => p.PharmaysProducts)
-            //    .Where(e => e.PharmaysProducts.Any(ps => ps.PharmacyId == Id));
-
-
-            //var viewModel = new PharmacyProductsViewModel
-            //{
-            //    Pharmacy = Pharmacyy,
-            //    Products = AllStock,
-
-            //};
-            //return View(viewModel);
-            return View(AllStock);
+           
+            return View(Stock);
         }
 
         [HttpPost]
