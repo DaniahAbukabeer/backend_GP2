@@ -28,6 +28,11 @@ namespace WebAppTry1.Models.sqlRepo
             return product;
         }
 
+        public ICollection<Product> GetAllProducts()
+        {
+            return context.Products.ToList();
+        }
+
         public Product GetProduct(int id)
         {
             return context.Products.Find(id);

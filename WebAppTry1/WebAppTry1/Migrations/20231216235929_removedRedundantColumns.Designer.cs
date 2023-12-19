@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebAppTry1.Models;
 
@@ -11,9 +12,11 @@ using WebAppTry1.Models;
 namespace WebAppTry1.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231216235929_removedRedundantColumns")]
+    partial class removedRedundantColumns
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -97,16 +100,16 @@ namespace WebAppTry1.Migrations
                     b.Property<int>("ProductId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Amount")
+                    b.Property<int>("Amount")
                         .HasColumnType("int");
 
-                    b.Property<double?>("PrivatePrice")
+                    b.Property<double>("PrivatePrice")
                         .HasColumnType("float");
 
-                    b.Property<double?>("PublicPrice")
+                    b.Property<double>("PublicPrice")
                         .HasColumnType("float");
 
-                    b.Property<double?>("Quantity")
+                    b.Property<double>("Quantity")
                         .HasColumnType("float");
 
                     b.HasKey("PharmacyId", "ProductId");
