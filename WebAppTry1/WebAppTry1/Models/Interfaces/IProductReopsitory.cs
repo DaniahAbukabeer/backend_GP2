@@ -4,7 +4,7 @@
     {
         Product GetProduct(int id);
         IEnumerable<Product> GetProducts();
-        ICollection<Product> GetAllProducts();
+        IQueryable<Product> GetAllProducts();
         Product addProduct(Product product);
         Product updateProduct(Product product);
         Product DeleteProduct(int id);
