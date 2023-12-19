@@ -8,7 +8,7 @@ namespace WebAppTry1.Models
         {
             UserProducts = new List<UserProduct>();
             //Pharmacy = new List<Pharmacy>();
-            //PharmaysProducts = new List<PharmaysProducts>();
+            PharmaysProducts = new List<PharmaysProducts>();
         }
 
         [Key]

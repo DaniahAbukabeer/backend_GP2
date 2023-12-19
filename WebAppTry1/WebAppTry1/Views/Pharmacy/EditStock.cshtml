@@ -20,8 +20,8 @@
 
 <div class="container">
     <section class="table-responsive">
-            <!--Table-->
         @if(Model != null){
+            <!--Table-->
             <table class="table table-hover table-fixed">
                 <!--Table head-->
                 <thead>
@@ -59,7 +59,7 @@
 
                     </tr>*@
 
-                        <tr>
+                        <tr class="bg-danger">
                             <th class="col-1" scope="row">@(product.ATCCODE ?? "N/A")</th>
                             <td class="col-1">@(product.TName ?? "N/A")</td>
                             <td class="col-1">@(product.Dosage.ToString() ?? "N/A")></td>
