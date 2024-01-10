@@ -2,6 +2,11 @@
 {
     public class UserProduct
     {
+        //public UserProduct()
+        //{
+        //   user = new User();   
+        //   Product = new Product();
+        //}
         public int UserId { get; set; }
         public int ProductId { get; set; }
         public User user { get; set; } = null!;

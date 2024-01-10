@@ -1,4 +1,6 @@
-﻿@{
+﻿@model AddStockViewModel;
+
+@{
     ViewData["Title"] = "Add New Stock";
 }
 <style>
@@ -19,103 +21,54 @@
 <h1>@ViewData["Title"]</h1>
 <hr />
 <section class="table-responsive">
-    <form method="post">
+    <form method="post" asp-action="AddStock">
+        <input type="hidden" asp-for="PharmacyId" />
+        @*<input type="hidden" asp-for="PharmacyId" value="@"/>*@
         <!--Table-->
         <table class="table table-hover table-fixed">
             <!--Table head-->
             <thead>
                 <tr>
-                    <th>Code</th>
+                    <th>ATC Code</th>
                     <th>product Name</th>
+                    <th>real Name</th>
                     <th>dosage</th>
                     <th>price</th>
                     <th>Quantity</th>
-                    <th>Expire Date</th>
-                    <th>Discount</th>
-                    <th>Tax</th>
-                    <th>Total Price</th>
+                    @*<th>Expire Date</th>*@
+                    @*<th>BarCode</th>*@
+                    <th>Provider</th>
+                    <th>Mother Contry</th>
+                    <th>Amount</th>
+                    <th>Customer Price</th>
                 </tr>
             </thead>
             <!--Table head-->
             <!--Table body-->
             <tbody>
                 <tr>
-                    <th class="col-1" scope="row"><input class="form-control" type="number" /></th>
-                    <td class="col-1"><input class="form-control" type="text" /></td>
-                    <td class="col-1"><input class="form-control" type="number" min="0" /> <label>mg</label></td>
-                    <td class="col-1"><input class="form-control" type="number" min="0" /></td>
-                    <td class="col-1"><input class="form-control" type="number" min="1" /></td>
-                    <td class="col-1"><input class="form-control" type="date" /></td>
-                    <td class="col-1"><input class="form-control" type="number" min="0" /></td>
-                    <td class="col-1"><input class="form-control" type="number" min="0" /></td>
-                    <td class="col-1"><input class="form-control" type="number" min="0" /></td>
-
-                </tr>
-                <tr>
-                    <th class="col-1" scope="row"><input class="form-control" type="number" /></th>
-                    <td class="col-1"><input class="form-control" type="text" /></td>
-                    <td class="col-1"><input class="form-control" type="number" min="0" /> <label>mg</label></td>
-                    <td class="col-1"><input class="form-control" type="number" min="0" /></td>
-                    <td class="col-1"><input class="form-control" type="number" min="1" /></td>
-                    <td class="col-1"><input class="form-control" type="date" /></td>
-                    <td class="col-1"><input class="form-control" type="number" min="0" /></td>
-                    <td class="col-1"><input class="form-control" type="number" min="0" /></td>
-                    <td class="col-1"><input class="form-control" type="number" min="0" /></td>
-
-                </tr>
-                <tr>
-                    <th class="col-1" scope="row"><input class="form-control" type="number" /></th>
-                    <td class="col-1"><input class="form-control" type="text" /></td>
-                    <td class="col-1"><input class="form-control" type="number" min="0" /> <label>mg</label></td>
-                    <td class="col-1"><input class="form-control" type="number" min="0" /></td>
-                    <td class="col-1"><input class="form-control" type="number" min="1" /></td>
-                    <td class="col-1"><input class="form-control" type="date" /></td>
-                    <td class="col-1"><input class="form-control" type="number" min="0" /></td>
-                    <td class="col-1"><input class="form-control" type="number" min="0" /></td>
-                    <td class="col-1"><input class="form-control" type="number" min="0" /></td>
-
-                </tr>
-                <tr>
-                    <th class="col-1" scope="row"><input class="form-control" type="number" /></th>
-                    <td class="col-1"><input class="form-control" type="text" /></td>
-                    <td class="col-1"><input class="form-control" type="number" min="0" /> <label>mg</label></td>
-                    <td class="col-1"><input class="form-control" type="number" min="0" /></td>
-                    <td class="col-1"><input class="form-control" type="number" min="1" /></td>
-                    <td class="col-1"><input class="form-control" type="date" /></td>
-                    <td class="col-1"><input class="form-control" type="number" min="0" /></td>
-                    <td class="col-1"><input class="form-control" type="number" min="0" /></td>
-                    <td class="col-1"><input class="form-control" type="number" min="0" /></td>
-
-                </tr>
-                <tr>
-                    <th class="col-1" scope="row"><input class="form-control" type="number" /></th>
-                    <td class="col-1"><input class="form-control" type="text" /></td>
-                    <td class="col-1"><input class="form-control" type="number" min="0" /> <label>mg</label></td>
-                    <td class="col-1"><input class="form-control" type="number" min="0" /></td>
-                    <td class="col-1"><input class="form-control" type="number" min="1" /></td>
-                    <td class="col-1"><input class="form-control" type="date" /></td>
-                    <td class="col-1"><input class="form-control" type="number" min="0" /></td>
-                    <td class="col-1"><input class="form-control" type="number" min="0" /></td>
-                    <td class="col-1"><input class="form-control" type="number" min="0" /></td>
-
-                </tr>
-                <tr>
-                    <th class="col-1" scope="row"><input class="form-control" type="number" /></th>
-                    <td class="col-1"><input class="form-control" type="text" /></td>
-                    <td class="col-1"><input class="form-control" type="number" min="0" /> <label>mg</label></td>
-                    <td class="col-1"><input class="form-control" type="number" min="0" /></td>
-                    <td class="col-1"><input class="form-control" type="number" min="1" /></td>
-                    <td class="col-1"><input class="form-control" type="date" /></td>
-                    <td class="col-1"><input class="form-control" type="number" min="0" /></td>
-                    <td class="col-1"><input class="form-control" type="number" min="0" /></td>
-                    <td class="col-1"><input class="form-control" type="number" min="0" /></td>
+                    <th class="col-1" scope="row"><input class="form-control" asp-for="ATCCODE" type="number" min="0"/></th>
+                    <td class="col-1"><input class="form-control" asp-for="TName" type="text" /></td>
+                    <td class="col-1"><input class="form-control " asp-for="SName" type="text" /></td>
+                    <td class="col-1"><input class="form-control" asp-for="Dosage" type="number" step="any" min="0" /> <label>mg</label></td>
+                    <td class="col-1"><input class="form-control" asp-for="PrivatePrice" type="number" min="0" step="any" /></td>
+                    <td class="col-1"><input class="form-control" asp-for=Quantity type="number" min="1" /></td>
+                    @*<td class="col-1"><input class="form-control" asp-for="ExpireDate" type="date" /></td>*@
+                    @*<td class="col-1"><input class="form-control" asp-for="BarCode" type="number" min="0"  /></td>*@
+                    <td class="col-1"><input class="form-control" asp-for="Provider" type="text" /></td>
+                    <td class="col-1"><input class="form-control" asp-for="Country" type="text" /></td>
+                    <td class="col-1"><input class="form-control" asp-for="Amount" type="number" min="0" /></td>
+                    <td class="col-1"><input class="form-control" asp-for="PublicPrice" step="any" type="number" min="0" /></td>
 
                 </tr>
             </tbody>
             <!--Table body-->
         </table>
         <!--Table-->
-        <button type="submit" class="btn btn-dark">Add Stock</button>
+        <div asp-validation-summary="All" class="text-danger">
+
+        </div>
+        <button type="submit"  class="btn btn-dark">Add Stock</button>
         <button type="reset" class="btn btn-outline-dark">Reset table</button>
         <a class="btn btn-outline-warning" asp-action="Index" asp-controller="Pharmacy">Cancel</a>
     </form>
