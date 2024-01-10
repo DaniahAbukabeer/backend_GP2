@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\dany\\source\\repos\\backend_GP2\\WebAppTry1\\WebAppTry1\\WebAppTry1.csproj": {}
+    "C:\\Users\\dany\\Source\\Repos\\backend_GP2\\WebAppTry1\\WebAppTry1\\WebAppTry1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\dany\\source\\repos\\backend_GP2\\WebAppTry1\\WebAppTry1\\WebAppTry1.csproj": {
+    "C:\\Users\\dany\\Source\\Repos\\backend_GP2\\WebAppTry1\\WebAppTry1\\WebAppTry1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dany\\source\\repos\\backend_GP2\\WebAppTry1\\WebAppTry1\\WebAppTry1.csproj",
+        "projectUniqueName": "C:\\Users\\dany\\Source\\Repos\\backend_GP2\\WebAppTry1\\WebAppTry1\\WebAppTry1.csproj",
         "projectName": "WebAppTry1",
-        "projectPath": "C:\\Users\\dany\\source\\repos\\backend_GP2\\WebAppTry1\\WebAppTry1\\WebAppTry1.csproj",
+        "projectPath": "C:\\Users\\dany\\Source\\Repos\\backend_GP2\\WebAppTry1\\WebAppTry1\\WebAppTry1.csproj",
         "packagesPath": "C:\\Users\\dany\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\dany\\source\\repos\\backend_GP2\\WebAppTry1\\WebAppTry1\\obj\\",
         "projectStyle": "PackageReference",
