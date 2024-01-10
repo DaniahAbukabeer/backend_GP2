@@ -48,7 +48,7 @@ namespace WebAppTry1.Controllers
             {
                 //Product NewProduct = _product.addProduct(product);
                 //int pharamcyId = model.PharmacyId;
-
+                //var pharmacyIdd = model.PharmacyId;
                 Product NewProduct = new Product { 
                     Id = model.ProductId,
                     TName = model.TName,

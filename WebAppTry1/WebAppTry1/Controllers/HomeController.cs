@@ -15,8 +15,10 @@ namespace WebAppTry1.Controllers
 
         public IActionResult Index()
         {
+            // return RedirectToAction("Receipt", "PharmacyController");
             return View();
         }
+
 
         public IActionResult Privacy()
         {
