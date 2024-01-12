@@ -24,8 +24,8 @@ namespace WebAppTry1.Models
         public int UserId { get; set; }
         public int PharmacyId { get; set; }
 
-        public User Users { get; set; }
-        public Pharmacy Pharmacy { get; set;}//every FeedBack is connected to one pharmacy only!
+        public User? Users { get; set; }
+        public Pharmacy? Pharmacy { get; set;}//every FeedBack is connected to one pharmacy only!
         
     }
 }

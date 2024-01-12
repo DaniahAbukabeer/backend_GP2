@@ -24,7 +24,7 @@ namespace DbConnectionAPI.Models
         public string PhoneNumber { get; set; }
         public double Latitude { get; set; }
         public double Longitude { get; set; }
-        public List<FeedBack> FeedBacks { get;set; }
-        public List<UserProduct> UserProducts { get;set;}
+        public List<FeedBack>? FeedBacks { get;set; }
+        public List<UserProduct>? UserProducts { get;set;}
     }
 }

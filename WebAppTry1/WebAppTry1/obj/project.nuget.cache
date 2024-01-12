@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LiuOxKIRJqiQt1mLZj+G+iuFHylcBFmjr2LZMft509mKlOTKs5hnkZbr/DJKLFCSfj7ZpfpG6xBL4rUz8KpU2A==",
+  "dgSpecHash": "7hkk1suIHPWGWVZgCvpLTJwPLbUXmXcG+rUhxZDtOpnxCwicPb/Wojns8A6J309/wjRXdPNzCXzTCfb07VloLg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\dany\\Source\\Repos\\backend_GP2\\WebAppTry1\\WebAppTry1\\WebAppTry1.csproj",
+  "projectFilePath": "C:\\Users\\dany\\source\\repos\\backend_GP2\\WebAppTry1\\WebAppTry1\\WebAppTry1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\dany\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\dany\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

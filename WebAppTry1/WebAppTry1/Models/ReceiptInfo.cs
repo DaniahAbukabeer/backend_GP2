@@ -11,6 +11,6 @@
         public string PharmacistName { get; set; }
         public double TotalPrice { get; set; }
 
-        public List<ReceiptsProducts> ReceiptsProducts { get; set;}//every receipts have a many products
+        public List<ReceiptsProducts>? ReceiptsProducts { get; set;}//every receipts have a many products
     }
 }

@@ -60,6 +60,9 @@ namespace WebAppTry1.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<DateTime?>("ClosingTime")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasMaxLength(150)
@@ -75,6 +78,12 @@ namespace WebAppTry1.Migrations
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
+
+                    b.Property<bool>("Open24Hours")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("OpeningTime")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("PhoneNumber")
                         .IsRequired()
@@ -128,6 +137,10 @@ namespace WebAppTry1.Migrations
                         .IsRequired()
                         .HasMaxLength(7)
                         .HasColumnType("nvarchar(7)");
+
+                    b.Property<string>("Categorie")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Country")
                         .IsRequired()
@@ -194,7 +207,7 @@ namespace WebAppTry1.Migrations
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
-                    b.Property<int>("ReceiptId")
+                    b.Property<int?>("ReceiptId")
                         .HasColumnType("int");
 
                     b.HasKey("Id", "ProductId");
@@ -259,6 +272,9 @@ namespace WebAppTry1.Migrations
                     b.Property<int>("ProductId")
                         .HasColumnType("int");
 
+                    b.Property<bool>("IsFavorite")
+                        .HasColumnType("bit");
+
                     b.Property<DateTime>("ViewedAt")
                         .HasColumnType("datetime2");
 
@@ -317,9 +333,7 @@ namespace WebAppTry1.Migrations
 
                     b.HasOne("WebAppTry1.Models.ReceiptInfo", "Receipt")
                         .WithMany("ReceiptsProducts")
-                        .HasForeignKey("ReceiptId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ReceiptId");
 
                     b.Navigation("ProductInfo");
 

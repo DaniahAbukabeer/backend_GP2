@@ -40,6 +40,7 @@ namespace DbConnectionAPI.Controllers
 
         }
 
+        //signup (register a new user)
         // Post: api/Users
         [HttpPost]
         public async Task<ActionResult<User>> PostUser(User user) {

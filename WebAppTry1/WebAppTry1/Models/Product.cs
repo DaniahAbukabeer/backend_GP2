@@ -21,7 +21,7 @@ namespace WebAppTry1.Models
         public string SName { get; set; } //scientific name
         public int UserId { get; set; }
        // public int PharmacyId { get; set; }//to be forigen key for the pharmacy
-        public List<UserProduct> UserProducts { get; } = new();
+        public List<UserProduct>? UserProducts { get; } = new();
        // public List<Pharmacy> Pharmacy { get; set;}//every product can be in one or more pharmacies!
 
 
@@ -38,7 +38,9 @@ namespace WebAppTry1.Models
         [MinLength(6)]
         public string ATCCODE { get; set; }//universal code to help categoires medications
 
-        public List<PharmaysProducts> PharmaysProducts { get; set; }
+        public string Categorie { get; set; }
+
+        public List<PharmaysProducts>? PharmaysProducts { get; set; }
         //public int PharmacyIdInPro { get; set; }
         //public List<Pharmacy> pharmacy { get; set; }
         //[MaxLength(50)]

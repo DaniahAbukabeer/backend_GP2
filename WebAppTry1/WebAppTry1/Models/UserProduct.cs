@@ -7,10 +7,16 @@
         //   user = new User();   
         //   Product = new Product();
         //}
+
+        public UserProduct()
+        {
+                IsFavorite= false;
+        }
         public int UserId { get; set; }
         public int ProductId { get; set; }
-        public User user { get; set; } = null!;
-        public Product Product { get; set; } = null!;
+        public bool IsFavorite { get; set; }
+        public User? user { get; set; } = null!;
+        public Product? Product { get; set; } = null!;
         public DateTime ViewedAt { get; set; }
     }
 }

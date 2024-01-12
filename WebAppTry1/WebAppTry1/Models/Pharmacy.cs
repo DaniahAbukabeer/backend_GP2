@@ -12,6 +12,7 @@ namespace WebAppTry1.Models
             FeedBack = new List<FeedBack>();
             //Product = new List<Product>();
             PharmaysProducts = new List<PharmaysProducts>();
+            Open24Hours = false;
         }
 
         [Key]
@@ -38,10 +39,14 @@ namespace WebAppTry1.Models
         public float Ratting { get; set; }//this is the average ratting of each pharamcy! (sum of all FeedBacks/number)
 
         //public int NumofFeedBacks { get; set; }//auto increment this every time someone leaves a co
+        public DateTime? OpeningTime { get; set; }
+        public DateTime? ClosingTime { get; set; }
 
-        public List<FeedBack> FeedBack { get; set; }//every pharmacy have a list of FeedBacks
+        public bool Open24Hours { get; set; }
+
+        public List<FeedBack>? FeedBack { get; set; }//every pharmacy have a list of FeedBacks
         //public List<Product> Product { get; set; }//a pharamcy can have one or more products
         //public List<PharmaysProducts> PharmaysProducts { get;set; }
-        public List<PharmaysProducts> PharmaysProducts { get;set; }
+        public List<PharmaysProducts>? PharmaysProducts { get;set; }
     }
 }

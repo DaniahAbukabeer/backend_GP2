@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\dany\\Source\\Repos\\backend_GP2\\DbConnectionAPI\\DbConnectionAPI\\DbConnectionAPI.csproj": {}
+    "C:\\Users\\dany\\source\\repos\\backend_GP2\\DbConnectionAPI\\DbConnectionAPI\\DbConnectionAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\dany\\Source\\Repos\\backend_GP2\\DbConnectionAPI\\DbConnectionAPI\\DbConnectionAPI.csproj": {
+    "C:\\Users\\dany\\source\\repos\\backend_GP2\\DbConnectionAPI\\DbConnectionAPI\\DbConnectionAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dany\\Source\\Repos\\backend_GP2\\DbConnectionAPI\\DbConnectionAPI\\DbConnectionAPI.csproj",
+        "projectUniqueName": "C:\\Users\\dany\\source\\repos\\backend_GP2\\DbConnectionAPI\\DbConnectionAPI\\DbConnectionAPI.csproj",
         "projectName": "DbConnectionAPI",
-        "projectPath": "C:\\Users\\dany\\Source\\Repos\\backend_GP2\\DbConnectionAPI\\DbConnectionAPI\\DbConnectionAPI.csproj",
+        "projectPath": "C:\\Users\\dany\\source\\repos\\backend_GP2\\DbConnectionAPI\\DbConnectionAPI\\DbConnectionAPI.csproj",
         "packagesPath": "C:\\Users\\dany\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\dany\\source\\repos\\backend_GP2\\DbConnectionAPI\\DbConnectionAPI\\obj\\",
         "projectStyle": "PackageReference",
