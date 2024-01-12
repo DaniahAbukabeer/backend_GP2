@@ -9,6 +9,7 @@ namespace DbConnectionAPI.Models
         {
             FeedBack = new List<FeedBack>();
             PharamaysProducts = new List<PharamaysProducts>();
+            Open24Hours = false;
         }
 
         public int Id { get; set; }
@@ -27,8 +28,12 @@ namespace DbConnectionAPI.Models
 
         [DefaultValue(0.0)]
         public float Ratting { get; set; }//this is the average ratting of each pharamcy! (sum of all FeedBacks/number)
-        public List<FeedBack> FeedBack { get; set; }
-        public List<PharamaysProducts> PharamaysProducts { get; set; }
+
+        public DateTime? OpeningTime { get; set; }
+        public DateTime? ClosingTime { get; set; }
+        public bool Open24Hours { get; set; }
+        public List<FeedBack>? FeedBack { get; set; }
+        public List<PharamaysProducts>? PharamaysProducts { get; set; }
 
     }
 }

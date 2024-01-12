@@ -32,9 +32,6 @@ namespace WebAppTry1.Models
 
         public List<FeedBack>? FeedBacks { get; set; }
 
-
-
-
         public List<UserProduct>? UserProducts { get; } = new(); 
 
         

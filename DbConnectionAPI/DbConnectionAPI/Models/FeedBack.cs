@@ -18,7 +18,7 @@ namespace DbConnectionAPI.Models
         public double Ratting { get; set; }
         public int UserId { get; set; }
         public int PharmacyId { get; set; }
-        public User Users { get; set; }
-        public Pharmacy Pharmacy { get; set; }
+        public User? Users { get; set; }
+        public Pharmacy? Pharmacy { get; set; }
     }
 }

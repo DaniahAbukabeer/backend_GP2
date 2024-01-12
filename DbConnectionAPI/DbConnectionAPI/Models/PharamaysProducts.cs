@@ -7,9 +7,9 @@
         public int? Amount { get; set; }
         public double? PrivatePrice { get; set; }
         public int PharmacyId { get; set; }
-        public Pharmacy Pharmacy { get; set; }
+        public Pharmacy? Pharmacy { get; set; }
         public int ProductId { get; set; }
-        public Product Product { get; set; }
+        public Product? Product { get; set; }
 
     }
 }

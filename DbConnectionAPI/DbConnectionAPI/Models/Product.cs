@@ -25,7 +25,8 @@ namespace DbConnectionAPI.Models
         public double Dosage { get; set; }
         [MaxLength(7)]
         public string ATCCODE { get; set; }
-        public List<PharamaysProducts> PharmacyProducts { get; set; }
+        public string Categorie { get; set; }
+        public List<PharamaysProducts>? PharmacyProducts { get; set; }
 
 
 
