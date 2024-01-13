@@ -5,10 +5,10 @@ namespace DbConnectionAPI.Models
 {
     public class User
     {
-        public User() { 
-            FeedBacks = new List<FeedBack>();
-            UserProducts = new List<UserProduct>();
-        }
+        //public User() { 
+        //    FeedBacks = new List<FeedBack>();
+        //    UserProducts = new List<UserProduct>();
+        //}
 
         public int Id { get; set; }
         [Required(ErrorMessage = "user name is required")]

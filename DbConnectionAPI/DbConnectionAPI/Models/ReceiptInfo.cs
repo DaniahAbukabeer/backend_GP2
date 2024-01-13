@@ -2,10 +2,10 @@
 {
     public class ReceiptInfo
     {
-        public ReceiptInfo()
-        {
-            ReceiptsProducts = new List<ReceiptsProducts>();
-        }
+        //public ReceiptInfo()
+        //{
+        //    ReceiptsProducts = new List<ReceiptsProducts>();
+        //}
         public int Id { get; set; }
         public DateTime date { get; set; }
         public string PharmacistName { get; set; }

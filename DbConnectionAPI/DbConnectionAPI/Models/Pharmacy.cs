@@ -5,12 +5,12 @@ namespace DbConnectionAPI.Models
 {
     public class Pharmacy
     {
-        public Pharmacy()
-        {
-            FeedBack = new List<FeedBack>();
-            PharamaysProducts = new List<PharamaysProducts>();
-            Open24Hours = false;
-        }
+        //public Pharmacy()
+        //{
+        //    FeedBack = new List<FeedBack>();
+        //    PharamaysProducts = new List<PharamaysProducts>();
+        //    Open24Hours = false;
+        //}
 
         public int Id { get; set; }
         [Required]

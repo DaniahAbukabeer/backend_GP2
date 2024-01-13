@@ -12,6 +12,13 @@ namespace DbConnectionAPI.Controllers
     [ApiController]
     public class UsersController : ControllerBase
     {
+        //hassing the user passowrd before adding to the database!
+        private string HashPassword(string password)
+        {
+            return BCrypt.Net.BCrypt.HashPassword(password);
+        }
+
+
         private readonly AppDbContext _context;
         public UsersController(AppDbContext context)
         {
@@ -23,6 +30,38 @@ namespace DbConnectionAPI.Controllers
         public async Task<ActionResult<IEnumerable<User>>> GetUsers()
         {
             return await _context.Users.ToListAsync();
+
+        }
+
+        [HttpPost("register")]
+        public IActionResult Register([FromBody] UserRegistrationDto userDto)
+        {
+            if (userDto == null)
+            {
+                return BadRequest("Invalid registration data.");
+            }
+
+            if (string.IsNullOrWhiteSpace(userDto.Username) || string.IsNullOrWhiteSpace(userDto.Phonenumber) || string.IsNullOrWhiteSpace(userDto.Password))
+            {
+                return BadRequest("Username, phonenumber, and password are required.");
+            }
+
+            //userDto.Password = HashPassword(userDto.Password);
+            var user = new User
+            {
+                UserName= userDto.Username,
+                PhoneNumber = userDto.Phonenumber,
+                Password= userDto.Password,
+                Longitude = 0,
+                Latitude = 0,
+            };
+
+            _context.Users.Add(user);
+            _context.SaveChanges();
+            return Ok(new { Message = "User registerd successfully."});
+
+
+
 
         }
 

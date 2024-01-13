@@ -8,7 +8,24 @@ namespace DbConnectionAPI
     {
         public static void Main(string[] args)
         {
+
+            var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
             var builder = WebApplication.CreateBuilder(args);
+
+            builder.Services.AddCors(
+                options => {
+                    //options.AddPolicy(name: MyAllowSpecificOrigins,
+                    //    policy =>
+                    //    {
+                    //        policy.WithOrigins()
+                    //    });
+                    options.AddDefaultPolicy(builder => {
+                        builder.AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader();
+                    });
+                    
+                });
 
             // Add services to the container.
 
@@ -30,6 +47,7 @@ namespace DbConnectionAPI
                 app.UseSwaggerUI();
             }
 
+            app.UseCors("AllowAllOrigins");
             app.UseHttpsRedirection();
 
             app.UseAuthorization();

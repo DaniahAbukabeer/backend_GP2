@@ -4,11 +4,11 @@ namespace DbConnectionAPI.Models
 {
     public class FeedBack
     {
-        public FeedBack()
-        {
-            Users = new User();
-            Pharmacy = new Pharmacy();
-        }
+        //public FeedBack()
+        //{
+        //    Users = new User();
+        //    Pharmacy = new Pharmacy();
+        //}
 
         public bool Statues { get; set; }
         public string  Text { get; set; }

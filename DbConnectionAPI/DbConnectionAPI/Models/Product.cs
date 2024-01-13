@@ -4,11 +4,11 @@ namespace DbConnectionAPI.Models
 {
     public class Product
     {
-        public Product()
-        {
-            UserProducts = new List<UserProduct>();
-            PharmacyProducts = new List<PharamaysProducts>();
-        }
+        //public Product()
+        //{
+        //    UserProducts = new List<UserProduct>();
+        //    PharmacyProducts = new List<PharamaysProducts>();
+        //}
         
         public int Id { get; set; }
         [MaxLength(60)]
