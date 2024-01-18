@@ -148,8 +148,7 @@ namespace WebAppTry1.Controllers
         {
             if (ModelState.IsValid)
             {
-                Pharmacy newPharmacy = _pharmacy.AddPharmacy(pharmacy);
-                //add a difrent return path if you want the user to see the new created pharmacy 
+                Pharmacy newPharmacy = _pharmacy.AddPharmacy(pharmacy); 
                 return RedirectToAction("Index");
             }
 

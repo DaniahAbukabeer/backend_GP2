@@ -75,3 +75,4 @@ C:\Users\dany\source\repos\backend_GP2\DbConnectionAPI\DbConnectionAPI\obj\Debug
 C:\Users\dany\source\repos\backend_GP2\DbConnectionAPI\DbConnectionAPI\obj\Debug\net7.0\DbConnectionAPI.genruntimeconfig.cache
 C:\Users\dany\source\repos\backend_GP2\DbConnectionAPI\DbConnectionAPI\obj\Debug\net7.0\ref\DbConnectionAPI.dll
 C:\Users\dany\source\repos\backend_GP2\DbConnectionAPI\DbConnectionAPI\bin\Debug\net7.0\BCrypt.Net.dll
+C:\Users\dany\source\repos\backend_GP2\DbConnectionAPI\DbConnectionAPI\bin\Debug\net7.0\Newtonsoft.Json.dll

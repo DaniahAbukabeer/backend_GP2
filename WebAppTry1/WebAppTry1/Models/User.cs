@@ -23,8 +23,6 @@ namespace WebAppTry1.Models
         [PasswordPropertyText]
         public string Password { get; set; }
         [Required(ErrorMessage ="Phone number is required")]
-        [MaxLength(13)]
-        [MinLength(13)]
         public string PhoneNumber { get; set; }
 
         public  double Latitude { get; set; }

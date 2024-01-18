@@ -19,12 +19,16 @@ namespace DbConnectionAPI
                     //    {
                     //        policy.WithOrigins()
                     //    });
-                    options.AddDefaultPolicy(builder => {
-                        builder.AllowAnyOrigin()
-                        .AllowAnyMethod()
-                        .AllowAnyHeader();
+
+                    //options.AddDefaultPolicy(builder => {
+                    //    builder.AllowAnyOrigin()
+                    //    .AllowAnyMethod()
+                    //    .AllowAnyHeader();
+                    //});
+                    options.AddPolicy("AllowAll", builder =>
+                    {
+                        builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
                     });
-                    
                 });
 
             // Add services to the container.
@@ -47,10 +51,12 @@ namespace DbConnectionAPI
                 app.UseSwaggerUI();
             }
 
-            app.UseCors("AllowAllOrigins");
+            //app.UseCors("AllowAllOrigin");
+            app.UseCors("AllowAll");
+            app.UseRouting();
             app.UseHttpsRedirection();
 
-            app.UseAuthorization();
+           // app.UseAuthorization();
 
 
             app.MapControllers();

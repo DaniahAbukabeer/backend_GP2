@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Http;
+using Newtonsoft.Json;
 //using System.Collections.Generic;
 //using System.Linq;
 //using System.Threading.Tasks;
@@ -36,12 +37,14 @@ namespace DbConnectionAPI.Controllers
         [HttpPost("register")]
         public IActionResult Register([FromBody] UserRegistrationDto userDto)
         {
+            //Console.WriteLine($"Received data: {JsonConvert.SerializeObject(userDto)}");
+            Console.WriteLine("-----------------------HEELOOWW FROM REGISTER ENDPOINT-------------------------");
             if (userDto == null)
             {
-                return BadRequest("Invalid registration data.");
+                return BadRequest("Invalid registration data.");    
             }
 
-            if (string.IsNullOrWhiteSpace(userDto.Username) || string.IsNullOrWhiteSpace(userDto.Phonenumber) || string.IsNullOrWhiteSpace(userDto.Password))
+            if (string.IsNullOrEmpty(userDto.Username) || string.IsNullOrEmpty(userDto.Phonenumber) || string.IsNullOrEmpty(userDto.Password))
             {
                 return BadRequest("Username, phonenumber, and password are required.");
             }
