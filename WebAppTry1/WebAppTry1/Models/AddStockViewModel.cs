@@ -14,8 +14,10 @@
         public double PrivatePrice { get; set; }
         public int PharmacyId { get; set; }
         public int ProductId { get; set; }
+        public string Categorie { get; set; }
 
-        
+
+
 
     }
 }

@@ -14,21 +14,22 @@ namespace DbConnectionAPI
 
             builder.Services.AddCors(
                 options => {
-                    //options.AddPolicy(name: MyAllowSpecificOrigins,
-                    //    policy =>
-                    //    {
-                    //        policy.WithOrigins()
-                    //    });
+                    options.AddPolicy(name: MyAllowSpecificOrigins,
+                        policy =>
+                        {
+                            policy.WithOrigins();
+                        });
 
-                    //options.AddDefaultPolicy(builder => {
-                    //    builder.AllowAnyOrigin()
-                    //    .AllowAnyMethod()
-                    //    .AllowAnyHeader();
-                    //});
-                    options.AddPolicy("AllowAll", builder =>
+                    options.AddDefaultPolicy(builder =>
                     {
-                        builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+                        builder.AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader();
                     });
+                    //options.AddPolicy("AllowAll", builder =>
+                    //{
+                    //    builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+                    //});
                 });
 
             // Add services to the container.

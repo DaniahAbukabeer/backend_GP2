@@ -57,6 +57,7 @@ namespace WebAppTry1.Controllers
                     Country = model.Country,
                     Dosage = model.Dosage,
                     ATCCODE = model.ATCCODE,
+                    Categorie = model.Categorie,
                     PharmaysProducts = new List<PharmaysProducts> { new PharmaysProducts()
                     {
                         PublicPrice = model.PublicPrice,
@@ -72,7 +73,7 @@ namespace WebAppTry1.Controllers
                
 
                 //var pharamcyId = _pharmacy.GetPharmacy();
-                return RedirectToAction("Index", NewProduct);
+                return RedirectToAction("EditStock/${model.PharmacyId}", model.PharmacyId);
             }
             return View(model);
         }
