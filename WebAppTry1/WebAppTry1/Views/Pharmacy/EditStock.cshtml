@@ -1,5 +1,5 @@
 ﻿@*@model WebAppTry1.Models.PharmacyProductsViewModel*@
-@model IEnumerable<Product>
+@model IEnumerable<AddStockViewModel>
 @{
     ViewData["Title"] = "Edit stock";
 }
@@ -28,13 +28,15 @@
                     <tr>
                         <th>ATC CODE</th>
                         <th>Trade Name</th>
+                        <th>Selling Name</th>
+                        <th>Provider</th>
+                        <th>Country</th>
                         <th>dosage</th>
-                        @*<th>price</th>*@
+                        <th>buying price</th>
                         <th>Quantity</th>
-                        @* <th>Expire Date</th>*@
-                        @*<th>BarCode</th>*@
-                        <th>Amount</th>
-                        <th>Price</th>
+                         <th>Amount</th>
+                        <th>Cateforie</th>
+                        <th>selling Price</th>
                         <th>Edit</th>
                     </tr>
                 </thead>
@@ -62,13 +64,16 @@
                         <tr >
                             <th class="col-1" scope="row">@(product.ATCCODE ?? "N/A")</th>
                             <td class="col-1">@(product.TName ?? "N/A")</td>
+                            <td class="col-1">@(product.SName ?? "N/A")</td>
+                            <td class="col-1">@(product.Provider ?? "N/A")</td>
+                            <td class="col-1">@(product.Country?? "N/A")</td>
                             <td class="col-1">@(product.Dosage.ToString() ?? "N/A")></td>
-                            @*<td class="col-1">@(product.PrivatePrice.ToString() ?? "N/A")</td>*@
-                            @*<td class="col-1">@(product.Quantity.ToString() ?? "N/A")</td>*@
-                            @*<td class="col-1">@(product.BarCode.ToString() ?? "N/A")</td>*@
-                            @*<td class="col-1">@(product.Amount.ToString() ?? "N/A")</td>*@
-                            @*<td class="col-1">@(product.PublicPrice.ToString() ?? "N/A")</td>*@
-                            <td class="col-1"><a class="btn btn-dark form-control" asp-action="Selling" asp-controller="Pharmacy" asp-route-Id="@product.Id">Edit</a></td>
+                            <td class="col-1">@(product.PrivatePrice.ToString() ?? "N/A")</td>
+                            <td class="col-1">@(product.Quantity.ToString() ?? "N/A")</td>
+                            <td class="col-1">@(product.Amount.ToString() ?? "N/A")</td>
+                            <td class="col-1">@(product.Categorie ?? "N/A")</td>
+                            <td class="col-1">@(product.PublicPrice.ToString() ?? "N/A")</td>
+                            <td class="col-1"><a class="btn btn-dark form-control" asp-action="Selling" asp-controller="Pharmacy" asp-route-Id="@product.ProductId">Edit</a></td>
                     </tr>
                     }
                 </tbody>

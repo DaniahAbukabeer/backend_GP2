@@ -33,34 +33,52 @@ namespace DbConnectionAPI.Controllers
             return await _context.Users.ToListAsync();
 
         }
+        [HttpPost("test")]
+        public async Task<IActionResult> Test([FromBody] UserRegistrationDto user)
+        {
+            Console.WriteLine("----------------------------------------------------------------------------");
+            Console.WriteLine("TEST");
+            return Ok(new { Message = "User registerd successfully." });
+
+
+        }
+
+
 
         [HttpPost("register")]
-        public IActionResult Register([FromBody] UserRegistrationDto userDto)
+        public async Task<IActionResult> Register([FromBody] UserRegistrationDto userDto)
         {
             //Console.WriteLine($"Received data: {JsonConvert.SerializeObject(userDto)}");
             Console.WriteLine("-----------------------HEELOOWW FROM REGISTER ENDPOINT-------------------------");
-            if (userDto == null)
-            {
-                return BadRequest("Invalid registration data.");    
-            }
 
-            if (string.IsNullOrEmpty(userDto.Username) || string.IsNullOrEmpty(userDto.Phonenumber) || string.IsNullOrEmpty(userDto.Password))
-            {
-                return BadRequest("Username, phonenumber, and password are required.");
-            }
+            //if (!ModelState.IsValid)
+            //{
+            //    return BadRequest(new { Message = "Invalid data", Errors = ModelState.Values.SelectMany(v => v.Errors) });
+            //}
+
+            //var post = new Po
+            //if (userDto == null)
+            //{
+            //    return BadRequest("Invalid registration data.");
+            //}
+
+            //if (string.IsNullOrEmpty(userDto.Username) || string.IsNullOrEmpty(userDto.Phonenumber) || string.IsNullOrEmpty(userDto.Password))
+            //{
+            //    return BadRequest("Username, phonenumber, and password are required.");
+            //}
 
             //userDto.Password = HashPassword(userDto.Password);
-            var user = new User
-            {
-                UserName= userDto.Username,
-                PhoneNumber = userDto.Phonenumber,
-                Password= userDto.Password,
-                Longitude = 0,
-                Latitude = 0,
-            };
+            //var user = new User
+            //{
+            //    UserName= userDto.Username,
+            //    PhoneNumber = userDto.Phonenumber,
+            //    Password= userDto.Password,
+            //    Longitude = 0,
+            //    Latitude = 0,
+            //};
 
-            _context.Users.Add(user);
-            _context.SaveChanges();
+            //_context.Users.Add(user);
+            //_context.SaveChanges();
             return Ok(new { Message = "User registerd successfully."});
 
 
