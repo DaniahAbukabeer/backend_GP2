@@ -46,8 +46,8 @@ namespace WebAppTry1.Models
                     PhoneNumber = "0791234567",
                     UserName = "Test1",
                     Password = "password12345678",
-                    Latitude = 32.234524,
-                    Longitude = 23.234632,
+                    //Latitude = 32.234524,
+                    //Longitude = 23.234632,
 
 
                 });
@@ -173,6 +173,13 @@ namespace WebAppTry1.Models
                 .HasOne(e=>e.Pharmacy)
                 .WithMany(ex=>ex.PharmaysProducts)
                 .HasForeignKey(e => e.PharmacyId);
+
+            //modelBuilder.Entity<User>()
+            //    .HasIndex(u => u.PhoneNumber)
+            //    .IsUnique();
+            //modelBuilder.Entity<Pharmacy>()
+            //    .HasIndex(u => u.Phonenumber)
+            //    .IsUnique();
 
 
             //modelBuilder.Entity<Product>()

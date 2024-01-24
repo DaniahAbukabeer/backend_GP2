@@ -27,6 +27,7 @@ namespace DbConnectionAPI.Models
                 .HasOne(e => e.Pharmacy)
                 .WithMany(ex => ex.PharamaysProducts)
                 .HasForeignKey(e => e.PharmacyId);
+            
         }
         public DbSet<User> Users { get; set; }
         public DbSet<Pharmacy> pharmacies { get; set; } 

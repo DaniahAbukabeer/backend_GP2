@@ -25,8 +25,8 @@ namespace WebAppTry1.Models
         [Required(ErrorMessage ="Phone number is required")]
         public string PhoneNumber { get; set; }
 
-        public  double Latitude { get; set; }
-        public double Longitude { get; set; }
+        //public  double Latitude { get; set; }
+        //public double Longitude { get; set; }
 
         public List<FeedBack>? FeedBacks { get; set; }
 

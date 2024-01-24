@@ -22,11 +22,14 @@ namespace WebAppTry1.Models
         public string Name { get; set; }
         [Required]
         [MaxLength(10)]
-        public string PhoneNumber { get; set; }
+        public string Phonenumber { get; set; }
         //[Required]
         //public TimeSpan workingHours { get; set; }//for testing removed!
         //[Required]
         //public GeoCoordinate Location { get; set; }
+
+        public string Address { get; set; }
+
         [Required]
         public double Latitude { get; set; }
         [Required]

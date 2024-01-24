@@ -49,7 +49,7 @@ namespace WebAppTry1.Migrations
 
                     b.HasIndex("PharmacyId");
 
-                    b.ToTable("FeedBacks");
+                    b.ToTable("FeedBacks", (string)null);
                 });
 
             modelBuilder.Entity("WebAppTry1.Models.Pharmacy", b =>
@@ -59,6 +59,10 @@ namespace WebAppTry1.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("ClosingTime")
                         .HasColumnType("datetime2");
@@ -95,7 +99,7 @@ namespace WebAppTry1.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Pharmacies");
+                    b.ToTable("Pharmacies", (string)null);
                 });
 
             modelBuilder.Entity("WebAppTry1.Models.PharmaysProducts", b =>
@@ -122,7 +126,7 @@ namespace WebAppTry1.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("pharmaysProducts");
+                    b.ToTable("pharmaysProducts", (string)null);
                 });
 
             modelBuilder.Entity("WebAppTry1.Models.Product", b =>
@@ -170,7 +174,7 @@ namespace WebAppTry1.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Products");
+                    b.ToTable("Products", (string)null);
                 });
 
             modelBuilder.Entity("WebAppTry1.Models.ReceiptInfo", b =>
@@ -193,7 +197,7 @@ namespace WebAppTry1.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ReceiptInfo");
+                    b.ToTable("ReceiptInfo", (string)null);
                 });
 
             modelBuilder.Entity("WebAppTry1.Models.ReceiptsProducts", b =>
@@ -216,7 +220,7 @@ namespace WebAppTry1.Migrations
 
                     b.HasIndex("ReceiptId");
 
-                    b.ToTable("ReceiptsProducts");
+                    b.ToTable("ReceiptsProducts", (string)null);
                 });
 
             modelBuilder.Entity("WebAppTry1.Models.User", b =>
@@ -226,12 +230,6 @@ namespace WebAppTry1.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<double>("Latitude")
-                        .HasColumnType("float");
-
-                    b.Property<double>("Longitude")
-                        .HasColumnType("float");
 
                     b.Property<string>("Password")
                         .IsRequired()
@@ -249,14 +247,12 @@ namespace WebAppTry1.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users");
+                    b.ToTable("Users", (string)null);
 
                     b.HasData(
                         new
                         {
                             Id = 1,
-                            Latitude = 32.234524,
-                            Longitude = 23.234632000000001,
                             Password = "password12345678",
                             PhoneNumber = "0791234567",
                             UserName = "Test1"
@@ -281,7 +277,7 @@ namespace WebAppTry1.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("UserProduct");
+                    b.ToTable("UserProduct", (string)null);
                 });
 
             modelBuilder.Entity("WebAppTry1.Models.FeedBack", b =>

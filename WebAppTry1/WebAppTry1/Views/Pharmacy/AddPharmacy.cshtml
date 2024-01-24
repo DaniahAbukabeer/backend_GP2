@@ -16,8 +16,8 @@
         </div>
         <div class="row">
             <lable class="form-label">Pharmacy Phone Number</lable>
-            <input class="form-control type="tel" asp-for="@Model.PhoneNumber" />
-            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            <input class="form-control type="tel" asp-for="@Model.Phonenumber" />
+            <span asp-validation-for="Phonenumber" class="text-danger"></span>
         </div>
             <lable>Working Hours</lable>
         <div class="row row-cols-lg-2 row-cols-md-2">
@@ -40,6 +40,11 @@
             <label class="form-label" >Ratting</label>
             <input class="form-control" type="number" step="Any" asp-for="@Model.Ratting"/>
             <span asp-validation-for="Ratting" class="text-danger"></span>
+        </div>
+        <div class="row">
+            <label class="form-label">Address</label>
+            <input class="form-control" type="text" asp-for="@Model.Address" />
+            <span asp-validation-for="Description" class="text-danger"></span>
         </div>
         <div class="row row-cols-2">
             <div class="col-5">
