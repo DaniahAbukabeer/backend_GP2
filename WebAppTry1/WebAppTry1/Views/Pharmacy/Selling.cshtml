@@ -1,4 +1,4 @@
-﻿
+﻿@model Product
 @{
     ViewData["Title"] = "Selling Item";
 }
@@ -9,34 +9,34 @@
             <div class="col-7">
                 <div class="row">
                     <label class="col-form-label">Product name</label>
-                    <input type="text" class="form-control" value="Test Name"/>
+                    <input type="text" class="form-control" value="@Model.TName"/>
                 </div>
                 <div class="row">
                     <div class="col-3">
                         <label>dosage</label>
-                        <input type="number" class="form-control" min="0" value="500" />
+                        <input type="number" class="form-control" min="0" value="@Model.Dosage" />
                     </div>
                      <div class="col-3">
-                        <label>Price</label>
-                        <input type="number" class="form-control" min="0" value="20.3" />
+                        <label>ATC code</label>
+                        <input type="number" class="form-control" min="0" value="@Model.ATCCODE" />
                     </div>
                     <div class="col-3">
                         <label>Quantity</label>
-                        <input type="number" class="form-control" min="0" value="2" />
+                        @*<input type="number" class="form-control" min="0" value="@Model.Quantity" />*@
                     </div>
-                    <div class="col-3">
+                   @* <div class="col-3">
                         <label>Expire Date</label>
                         <input type="date" class="form-control" min="0" value="2" />
-                    </div>
+                    </div>*@
                 </div>
                 <div class="row row-cols-2 mb-3">
                     <div >
-                        <label>Tax</label>
-                        <input type="number" min="0" value="13" class="form-control"/>
+                        <label>Amount</label>
+                        @*<input type="number" min="0" value="@Model.Amount" class="form-control"/>*@
                     </div>
                     <div >
                         <label>Total Price</label>
-                        <input disabled type="number" value="3.45" class="form-control" />
+                        @*<input disabled type="number" value="@Model.PublicPrice" class="form-control" />*@
                     </div>
                 </div>
             </div>

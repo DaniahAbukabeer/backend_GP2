@@ -2930,11 +2930,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\source\\repos\\backend_GP2\\WebAppTry1\\WebAppTry1\\WebAppTry1.csproj",
+      "projectUniqueName": "C:\\Users\\User\\source\\repos\\github\\WebAppTry1\\WebAppTry1\\WebAppTry1.csproj",
       "projectName": "WebAppTry1",
-      "projectPath": "C:\\Users\\User\\source\\repos\\backend_GP2\\WebAppTry1\\WebAppTry1\\WebAppTry1.csproj",
+      "projectPath": "C:\\Users\\User\\source\\repos\\github\\WebAppTry1\\WebAppTry1\\WebAppTry1.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\source\\repos\\backend_GP2\\WebAppTry1\\WebAppTry1\\obj\\",
+      "outputPath": "C:\\Users\\User\\source\\repos\\github\\WebAppTry1\\WebAppTry1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -3012,13 +3012,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\User\\source\\repos\\backend_GP2\\WebAppTry1\\WebAppTry1\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }

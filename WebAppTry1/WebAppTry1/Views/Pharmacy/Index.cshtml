@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<Pharmacy>
 @{
     ViewData["Title"] = "Pharmacies Manager";
 }
@@ -25,72 +25,41 @@
                 </div>
             </div>
             <div class="row mb-3 mx-3">
+                @if (Model != null)
+                {
+                    
+                @foreach (var pharmacy in Model)
+                {
                 <div class="col-12 col-sm-6 ">
                     <div class="card mb-3 px-0">
-                        @*                     <img class="card-img-top" src="~/images/pexels-anna-shvets-3683051.jpg" alt="pharmacy one"/>
-                        *@                    <div class="card-header">
-                                                  <h3> Pharmacy 1</h3>
+                        <div class="card-header">
+                            <h3>@pharmacy.Name pharmacy</h3>
                         </div>
                         <div class="card-body">
-                            <p> test test test test test test</p>
+                            <p>@pharmacy.Description</p>
+                            <h6>our customers rattings : @pharmacy.Ratting</h6>
                         </div>
                         <div class="card-footer">
-                            <a class="btn btn-dark" asp-action="AddStock" asp-controller="Pharmacy">Add Stock</a>
-                            <a class="btn btn-outline-dark" asp-action="EditStock" asp-controller="Pharmacy">View </a>
-                            <a class="btn btn-outline-danger" href="#">Remove </a>
+                            <a class="btn btn-dark" asp-action="AddStock" asp-controller="Pharmacy" asp-route-PharmacyId="@pharmacy.Id">Add Stock</a>
+                            <a class="btn btn-outline-dark" asp-action="EditStock" asp-controller="Pharmacy" asp-route-PharmacyId="@pharmacy.Id" >View </a>
+                                    <form class="d-inline-block" method="post" asp-action="DeletePharmacy" asp-route-Id="@pharmacy.Id">
+                                        <button type="submit" class="btn btn-outline-danger d-inline">Remove </button>
+                                    </form>
                         </div>
                     </div>
-                </div>
-                <div class="col-12 col-sm-6 ">
-                    <div class="card mb-3 px-0">
-                        @*                     <img class="card-img-top" src="~/images/pexels-anna-shvets-3683051.jpg" alt="pharmacy one"/>
-                        *@                    <div class="card-header">
-                                                  <h3>Pharmacy 2</h3> 
                         </div>
-                        <div class="card-body">
-                            <p> test test test test test test</p>
-                        </div>
-                        <div class="card-footer">
-                            <a class="btn btn-dark" asp-action="AddStock" asp-controller="Pharmacy">Add Stock</a>
-                            <a class="btn btn-outline-dark" asp-action="EditStock" asp-controller="Pharmacy">View </a>
-                            <a class="btn btn-outline-danger" href="#">Remove </a>
-                        </div>
+                    }
+                }
+                else
+                {
+                    <div class="align-content-center"> 
+                        <h2>There are no Pharmacies added to the system yet!</h2>
                     </div>
-                </div>
-                <div class="col-12 col-sm-6  ">
-                    <div class="card mb-3 px-0">
-                        @*                     <img class="card-img-top" src="~/images/pexels-anna-shvets-3683051.jpg" alt="pharmacy one"/>
-                        *@                    <div class="card-header">
-                                                  <h3> Pharmacy 3</h3>
-                        </div>
-                        <div class="card-body">
-                            <p> test test test test test test</p>
-                        </div>
-                        <div class="card-footer">
-                            <a class="btn btn-dark" asp-action="AddStock" asp-controller="Pharmacy">Add Stock</a>
-                            <a class="btn btn-outline-dark" asp-action="EditStock" asp-controller="Pharmacy">View </a>
-                            <a class="btn btn-outline-danger" href="#">Remove </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 ">
-                    <div class="card mb-3 px-0">
-                        @*                     <img class="card-img-top" src="~/images/pexels-anna-shvets-3683051.jpg" alt="pharmacy one"/>
-                        *@                    <div class="card-header">
-                                                  <h3>Pharmacy 4</h3>
-                        </div>
-                        <div class="card-body">
-                            <p> test test test test test test</p>
-                        </div>
-                        <div class="card-footer">
-                            <a class="btn btn-dark" asp-action="AddStock" asp-controller="Pharmacy">Add Stock</a>
-                            <a class="btn btn-outline-dark" asp-action="EditStock" asp-controller="Pharmacy">View </a>
-                            <a class="btn btn-outline-danger" href="#">Remove </a>
-                        </div>
-                    </div>
-                </div>
+                }
             </div>
-
+            <div class="m-3"> @*look up what classes in bootsrap will keep it in da buttom?*@
+                <a class="btn btn-dark" asp-controller="Pharmacy" asp-action="AddPharmacy">Add Pharmacy</a>
+            </div>
         </div>
     </nav>
 </div>

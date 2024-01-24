@@ -1,4 +1,5 @@
-﻿using WebAppTry1.Models.Interfaces;
+﻿using Microsoft.EntityFrameworkCore;
+using WebAppTry1.Models.Interfaces;
 
 namespace WebAppTry1.Models.sqlRepo
 {
@@ -28,6 +29,11 @@ namespace WebAppTry1.Models.sqlRepo
             return product;
         }
 
+        //public ICollection<Product> GetAllProducts()
+        //{
+        //    return context.Products.ToList();
+        //}
+
         public Product GetProduct(int id)
         {
             return context.Products.Find(id);
@@ -46,6 +52,9 @@ namespace WebAppTry1.Models.sqlRepo
             return product;
         }
 
-
+        IQueryable<Product> IProductReopsitory.GetAllProducts()
+        {
+            return context.Products.Include(p => p.PharmaysProducts);
+        }
     }
 }

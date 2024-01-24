@@ -22,21 +22,6 @@ namespace WebAppTry1.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("PharmacyProduct", b =>
-                {
-                    b.Property<int>("PharmacyId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
-
-                    b.HasKey("PharmacyId", "ProductId");
-
-                    b.HasIndex("ProductId");
-
-                    b.ToTable("PharmacyProduct");
-                });
-
             modelBuilder.Entity("WebAppTry1.Models.FeedBack", b =>
                 {
                     b.Property<int>("UserId")
@@ -45,9 +30,9 @@ namespace WebAppTry1.Migrations
                     b.Property<int>("PharmacyId")
                         .HasColumnType("int");
 
-                    b.Property<float>("Ratting")
+                    b.Property<double>("Ratting")
                         .HasMaxLength(5)
-                        .HasColumnType("real");
+                        .HasColumnType("float");
 
                     b.Property<bool>("Statues")
                         .HasColumnType("bit");
@@ -64,7 +49,7 @@ namespace WebAppTry1.Migrations
 
                     b.HasIndex("PharmacyId");
 
-                    b.ToTable("FeedBacks");
+                    b.ToTable("FeedBacks", (string)null);
                 });
 
             modelBuilder.Entity("WebAppTry1.Models.Pharmacy", b =>
@@ -74,6 +59,13 @@ namespace WebAppTry1.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("ClosingTime")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -91,21 +83,50 @@ namespace WebAppTry1.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
+                    b.Property<bool>("Open24Hours")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("OpeningTime")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("PhoneNumber")
                         .IsRequired()
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
 
                     b.Property<float>("Ratting")
-                        .HasMaxLength(5)
                         .HasColumnType("real");
-
-                    b.Property<TimeSpan>("workingHours")
-                        .HasColumnType("time");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Pharmacies");
+                    b.ToTable("Pharmacies", (string)null);
+                });
+
+            modelBuilder.Entity("WebAppTry1.Models.PharmaysProducts", b =>
+                {
+                    b.Property<int>("PharmacyId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("Amount")
+                        .HasColumnType("int");
+
+                    b.Property<double?>("PrivatePrice")
+                        .HasColumnType("float");
+
+                    b.Property<double?>("PublicPrice")
+                        .HasColumnType("float");
+
+                    b.Property<double?>("Quantity")
+                        .HasColumnType("float");
+
+                    b.HasKey("PharmacyId", "ProductId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("pharmaysProducts", (string)null);
                 });
 
             modelBuilder.Entity("WebAppTry1.Models.Product", b =>
@@ -121,50 +142,22 @@ namespace WebAppTry1.Migrations
                         .HasMaxLength(7)
                         .HasColumnType("nvarchar(7)");
 
-                    b.Property<int>("Amount")
-                        .HasColumnType("int");
-
-                    b.Property<int>("BarCode")
-                        .HasMaxLength(13)
-                        .HasColumnType("int");
+                    b.Property<string>("Categorie")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Country")
                         .IsRequired()
                         .HasMaxLength(30)
                         .HasColumnType("nvarchar(30)");
 
-                    b.Property<double>("Discount")
-                        .HasColumnType("float");
-
-                    b.Property<string>("Discreption")
-                        .IsRequired()
-                        .HasMaxLength(150)
-                        .HasColumnType("nvarchar(150)");
-
-                    b.Property<DateTime>("ExpireDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("LocalAgent")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<double>("PrivatePrice")
+                    b.Property<double>("Dosage")
                         .HasColumnType("float");
 
                     b.Property<string>("Provider")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
-
-                    b.Property<double>("PublicPrice")
-                        .HasColumnType("float");
-
-                    b.Property<double>("PulbicPriceWTax")
-                        .HasColumnType("float");
-
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int");
 
                     b.Property<string>("SName")
                         .IsRequired()
@@ -179,14 +172,9 @@ namespace WebAppTry1.Migrations
                     b.Property<int>("UserId")
                         .HasColumnType("int");
 
-                    b.Property<string>("number")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
                     b.HasKey("Id");
 
-                    b.ToTable("Products");
+                    b.ToTable("Products", (string)null);
                 });
 
             modelBuilder.Entity("WebAppTry1.Models.ReceiptInfo", b =>
@@ -209,7 +197,7 @@ namespace WebAppTry1.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ReceiptInfo");
+                    b.ToTable("ReceiptInfo", (string)null);
                 });
 
             modelBuilder.Entity("WebAppTry1.Models.ReceiptsProducts", b =>
@@ -223,10 +211,7 @@ namespace WebAppTry1.Migrations
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
-                    b.Property<int>("ReceiptId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ReceiptNumber")
+                    b.Property<int?>("ReceiptId")
                         .HasColumnType("int");
 
                     b.HasKey("Id", "ProductId");
@@ -235,7 +220,7 @@ namespace WebAppTry1.Migrations
 
                     b.HasIndex("ReceiptId");
 
-                    b.ToTable("ReceiptsProducts");
+                    b.ToTable("ReceiptsProducts", (string)null);
                 });
 
             modelBuilder.Entity("WebAppTry1.Models.User", b =>
@@ -246,12 +231,6 @@ namespace WebAppTry1.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<double>("Latitude")
-                        .HasColumnType("float");
-
-                    b.Property<double>("Longitude")
-                        .HasColumnType("float");
-
                     b.Property<string>("Password")
                         .IsRequired()
                         .HasMaxLength(30)
@@ -259,8 +238,7 @@ namespace WebAppTry1.Migrations
 
                     b.Property<string>("PhoneNumber")
                         .IsRequired()
-                        .HasMaxLength(13)
-                        .HasColumnType("nvarchar(13)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserName")
                         .IsRequired()
@@ -269,14 +247,12 @@ namespace WebAppTry1.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users");
+                    b.ToTable("Users", (string)null);
 
                     b.HasData(
                         new
                         {
                             Id = 1,
-                            Latitude = 32.234524,
-                            Longitude = 23.234632000000001,
                             Password = "password12345678",
                             PhoneNumber = "0791234567",
                             UserName = "Test1"
@@ -291,6 +267,9 @@ namespace WebAppTry1.Migrations
                     b.Property<int>("ProductId")
                         .HasColumnType("int");
 
+                    b.Property<bool>("IsFavorite")
+                        .HasColumnType("bit");
+
                     b.Property<DateTime>("ViewedAt")
                         .HasColumnType("datetime2");
 
@@ -298,22 +277,7 @@ namespace WebAppTry1.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("UserProduct");
-                });
-
-            modelBuilder.Entity("PharmacyProduct", b =>
-                {
-                    b.HasOne("WebAppTry1.Models.Pharmacy", null)
-                        .WithMany()
-                        .HasForeignKey("PharmacyId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("WebAppTry1.Models.Product", null)
-                        .WithMany()
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.ToTable("UserProduct", (string)null);
                 });
 
             modelBuilder.Entity("WebAppTry1.Models.FeedBack", b =>
@@ -335,6 +299,25 @@ namespace WebAppTry1.Migrations
                     b.Navigation("Users");
                 });
 
+            modelBuilder.Entity("WebAppTry1.Models.PharmaysProducts", b =>
+                {
+                    b.HasOne("WebAppTry1.Models.Pharmacy", "Pharmacy")
+                        .WithMany("PharmaysProducts")
+                        .HasForeignKey("PharmacyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("WebAppTry1.Models.Product", "Product")
+                        .WithMany("PharmaysProducts")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Pharmacy");
+
+                    b.Navigation("Product");
+                });
+
             modelBuilder.Entity("WebAppTry1.Models.ReceiptsProducts", b =>
                 {
                     b.HasOne("WebAppTry1.Models.Product", "ProductInfo")
@@ -345,9 +328,7 @@ namespace WebAppTry1.Migrations
 
                     b.HasOne("WebAppTry1.Models.ReceiptInfo", "Receipt")
                         .WithMany("ReceiptsProducts")
-                        .HasForeignKey("ReceiptId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ReceiptId");
 
                     b.Navigation("ProductInfo");
 
@@ -376,10 +357,14 @@ namespace WebAppTry1.Migrations
             modelBuilder.Entity("WebAppTry1.Models.Pharmacy", b =>
                 {
                     b.Navigation("FeedBack");
+
+                    b.Navigation("PharmaysProducts");
                 });
 
             modelBuilder.Entity("WebAppTry1.Models.Product", b =>
                 {
+                    b.Navigation("PharmaysProducts");
+
                     b.Navigation("UserProducts");
                 });
 
