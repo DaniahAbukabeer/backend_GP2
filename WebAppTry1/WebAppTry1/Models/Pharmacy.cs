@@ -39,7 +39,7 @@ namespace WebAppTry1.Models
         //[Required(ErrorMessage ="")]
         //[MaxLength(5)]
         [DefaultValue(0.0)]
-        public float Ratting { get; set; }//this is the average ratting of each pharamcy! (sum of all FeedBacks/number)
+        public double Rating { get; set; }//this is the average Rating of each pharamcy! (sum of all FeedBacks/number)
 
         //public int NumofFeedBacks { get; set; }//auto increment this every time someone leaves a co
         public DateTime? OpeningTime { get; set; }

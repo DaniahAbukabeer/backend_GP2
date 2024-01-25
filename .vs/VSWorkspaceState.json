@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\WebAppTry1",
+    "\\WebAppTry1\\WebAppTry1",
+    "\\WebAppTry1\\WebAppTry1\\Models"
   ],
-  "SelectedNode": "\\DbConnectionAPI.sln",
+  "SelectedNode": "\\WebAppTry1\\WebAppTry1\\Models\\User.cs",
   "PreviewInSolutionExplorer": false
 }

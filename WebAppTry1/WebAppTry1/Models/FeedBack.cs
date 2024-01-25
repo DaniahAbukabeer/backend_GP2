@@ -17,9 +17,9 @@ namespace WebAppTry1.Models
 
         public string Title { get; set; }
 
-        [Required]//so we make the ratting required but the FeedBack is not,
-        //[MaxLength(5)]//so someone can leave a ratting but cant leave a FeedBack without ratting!
-        public double Ratting { get; set; }//this is the indivisual ratting for every FeedBack,
+        [Required]//so we make the Rating required but the FeedBack is not,
+        //[MaxLength(5)]//so someone can leave a Rating but cant leave a FeedBack without Rating!
+        public double Rating { get; set; }//this is the indivisual Rating for every FeedBack,
 
         public int UserId { get; set; }
         public int PharmacyId { get; set; }

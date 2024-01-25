@@ -30,8 +30,7 @@ namespace WebAppTry1.Migrations
                     b.Property<int>("PharmacyId")
                         .HasColumnType("int");
 
-                    b.Property<double>("Ratting")
-                        .HasMaxLength(5)
+                    b.Property<double>("Rating")
                         .HasColumnType("float");
 
                     b.Property<bool>("Statues")
@@ -49,7 +48,7 @@ namespace WebAppTry1.Migrations
 
                     b.HasIndex("PharmacyId");
 
-                    b.ToTable("FeedBacks", (string)null);
+                    b.ToTable("FeedBacks");
                 });
 
             modelBuilder.Entity("WebAppTry1.Models.Pharmacy", b =>
@@ -89,17 +88,17 @@ namespace WebAppTry1.Migrations
                     b.Property<DateTime?>("OpeningTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("PhoneNumber")
+                    b.Property<string>("Phonenumber")
                         .IsRequired()
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
 
-                    b.Property<float>("Ratting")
-                        .HasColumnType("real");
+                    b.Property<double>("Rating")
+                        .HasColumnType("float");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Pharmacies", (string)null);
+                    b.ToTable("Pharmacies");
                 });
 
             modelBuilder.Entity("WebAppTry1.Models.PharmaysProducts", b =>
@@ -126,7 +125,7 @@ namespace WebAppTry1.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("pharmaysProducts", (string)null);
+                    b.ToTable("pharmaysProducts");
                 });
 
             modelBuilder.Entity("WebAppTry1.Models.Product", b =>
@@ -174,7 +173,7 @@ namespace WebAppTry1.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Products", (string)null);
+                    b.ToTable("Products");
                 });
 
             modelBuilder.Entity("WebAppTry1.Models.ReceiptInfo", b =>
@@ -197,7 +196,7 @@ namespace WebAppTry1.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ReceiptInfo", (string)null);
+                    b.ToTable("ReceiptInfo");
                 });
 
             modelBuilder.Entity("WebAppTry1.Models.ReceiptsProducts", b =>
@@ -220,7 +219,7 @@ namespace WebAppTry1.Migrations
 
                     b.HasIndex("ReceiptId");
 
-                    b.ToTable("ReceiptsProducts", (string)null);
+                    b.ToTable("ReceiptsProducts");
                 });
 
             modelBuilder.Entity("WebAppTry1.Models.User", b =>
@@ -247,7 +246,7 @@ namespace WebAppTry1.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users", (string)null);
+                    b.ToTable("Users");
 
                     b.HasData(
                         new
@@ -277,7 +276,7 @@ namespace WebAppTry1.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("UserProduct", (string)null);
+                    b.ToTable("UserProduct");
                 });
 
             modelBuilder.Entity("WebAppTry1.Models.FeedBack", b =>
